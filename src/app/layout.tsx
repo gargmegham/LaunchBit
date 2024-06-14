@@ -1,14 +1,11 @@
 import { Inter } from "next/font/google"
 import Link from "next/link"
 
-import config from "@/utils/config"
-
 import "@/css/globals.css"
 
 import Script from "next/script"
 
 import { GoogleAnalytics } from "@next/third-parties/google"
-import NextTopLoader from "nextjs-toploader"
 
 import { getSEOTags } from "@/utils/seo"
 
@@ -26,8 +23,6 @@ export default function RootLayout({
             <body className={inter.className}>
                 <Link rel="preconnect" href="https://fonts.gstatic.com" />
                 <>
-                    {/* Show a progress bar at the top when navigating between pages */}
-                    <NextTopLoader color={config.colors.primary} showSpinner={false} />
                     {children}
                     {/* Clarity for recording user interactions */}
                     <Script type="text/javascript" id="clarity-microsoft">

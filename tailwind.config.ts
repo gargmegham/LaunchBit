@@ -34,6 +34,16 @@ module.exports = {
             )
         },
     ],
+    theme: {
+        extends: {
+            colors: {
+                primary: {
+                    DEFAULT: "#FFD015",
+                    secondary: "#FF8B04",
+                },
+            },
+        },
+    },
 }
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).

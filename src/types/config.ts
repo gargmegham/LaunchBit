@@ -11,10 +11,5 @@ export interface ConfigProps {
         github?: string
         telegram?: string
     }
-    colors: {
-        primary: string
-        secondary: string
-        tertiary: string
-    }
     keywords: string
 }

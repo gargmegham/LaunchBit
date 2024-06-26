@@ -7,7 +7,14 @@ export async function POST(req: Request) {
     try {
         let html = ``
         for (const key in body) {
+            if (key === "services") continue
             html += `${key}: ${body[key]} <br>`
+        }
+        if (body.services) {
+            html += `Services: <br>`
+            for (const key in body.services) {
+                html += `${key}: ${body.services[key]} <br>`
+            }
         }
         const data = await resend.emails.send({
             from: "LaunchBit <onboarding@resend.dev>",

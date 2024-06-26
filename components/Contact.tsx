@@ -25,7 +25,7 @@ export default function WebDesign() {
     const handleSubmit = async (e: any) => {
         e.preventDefault()
         try {
-            fetch("/api/mailgun", {
+            fetch("/api/send", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

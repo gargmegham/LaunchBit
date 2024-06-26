@@ -6,7 +6,7 @@ const Hero = () => {
             <div className="max-w-7xl px-4 md:px-8 py-24">
                 <div className="flex flex-col items-center justify-center gap-12 w-full">
                     <h1 className="font-bold text-4xl lg:text-6xl tracking-tight text-center xl:text-left">
-                        Design, Develop, Deploy
+                        Design, Develop, Launch
                     </h1>
                     <p className="text-lg text-center ">
                         Crafting digital experiences that elevate brand awareness, increase authority, and drive

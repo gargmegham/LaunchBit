@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 
 import { useState } from "react"
@@ -85,12 +86,18 @@ export default function Header() {
             <Headroom>
                 <header className="bg-gray-100/50 backdrop-blur-lg overflow-hidden max-w-7xl mt-6 mx-4 rounded-full xl:mx-auto">
                     <nav
-                        className="container flex items-center justify-between px-16 py-4 mx-auto max-w-7xl text-black"
+                        className="container flex items-center justify-between px-12 py-4 mx-auto max-w-7xl text-black"
                         aria-label="Global"
                     >
                         <div className="flex lg:flex-1">
-                            <Link className="shrink-0 py-4" href="/">
-                                <h1 className="text-4xl font-bold">LaunchBit</h1>
+                            <Link className="py-4 flex items-center gap-x-2" href="/">
+                                <Image src="/logo.svg" width={48} height={48} alt="LaunchBit Logo" />
+                                <h1 className="text-4xl font-bold">
+                                    <span className="text-[#FFD015]">Launch</span>
+                                    <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#FF1F00] to-[#FF8B04] bg-opacity-50">
+                                        Bit
+                                    </span>
+                                </h1>
                             </Link>
                         </div>
                         <div className="flex lg:hidden">

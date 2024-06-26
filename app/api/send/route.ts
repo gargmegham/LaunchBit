@@ -19,7 +19,7 @@ export async function POST(req: Request) {
         const data = await resend.emails.send({
             from: "LaunchBit <onboarding@resend.dev>",
             to: ["meghamgarg@gmail.com"],
-            subject: "NEW CONTACT FORM SUBMISSION!",
+            subject: "New form submission on LaunchBit! 🚀",
             html: html,
         })
         return Response.json(data)

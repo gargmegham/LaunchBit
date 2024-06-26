@@ -11,7 +11,6 @@ export async function POST(req: Request) {
             subject: "NEW CONTACT FORM SUBMISSION!",
             html: `name: ${body.name} <br> email: ${body.email} <br> company: ${body.company} <br> summary: ${body.summary}`,
         })
-
         return Response.json(data)
     } catch (error) {
         return Response.json({ error })

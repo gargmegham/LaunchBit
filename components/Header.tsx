@@ -1,9 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { useSearchParams } from "next/navigation"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 import config from "@/config"
 import { useLockBodyScroll } from "@uidotdev/usehooks"
@@ -80,11 +79,7 @@ export function Menu({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: (isOpe
 }
 
 export default function Header() {
-    const searchParams = useSearchParams()
     const [isOpen, setIsOpen] = useState<boolean>(false)
-    useEffect(() => {
-        setIsOpen(false)
-    }, [searchParams])
     return (
         <>
             <Headroom>

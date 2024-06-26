@@ -20,7 +20,7 @@ We appreciate your help in identifying vulnerabilities. However, please note tha
 
 If you discover a vulnerability, please adhere to the following reporting process:
 
-1. Email your findings to business@meghamgarg.com.
+1. Email your findings to security@launchbit.in.
 2. Refrain from running automated scanners on our infrastructure or dashboard without prior consent. Contact us to set up a sandbox environment if necessary.
 3. Do not exploit the vulnerability for malicious purposes, such as downloading excessive data or altering user data.
 4. Maintain confidentiality and refrain from disclosing the vulnerability until it has been resolved.

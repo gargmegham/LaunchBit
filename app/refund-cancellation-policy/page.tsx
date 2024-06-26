@@ -37,7 +37,7 @@ const RefundCancellationPolicy = () => {
                     </Link>
                 </div>
                 <h1 className="text-3xl mt-10 font-extrabold pb-6 text-neutral-400">
-                    Privacy Policy for {config.appName}
+                    Refund & Cancellation Policy for {config.appName}
                 </h1>
                 <pre className="leading-relaxed whitespace-pre-wrap" style={{ fontFamily: "sans-serif" }}>
                     {`Last Updated: 2024-06-03

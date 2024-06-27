@@ -167,79 +167,6 @@ export default function WebDesign() {
                     </div>
                 </div>
             </section>
-            {/* <section className="w-full flex flex-col items-center justify-center mx-auto bg-white text-black px-24 lg:px-8 py-24">
-				<div className="w-full max-w-7xl">
-					<h2 className="max-w-3xl w-full mx-auto text-center text-3xl font-bold mb-12">
-						Our Web Development Services
-					</h2>
-					<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
-						<Image
-							src={ph1}
-							alt="Service Image"
-							width={600}
-							height={600}
-							className="object-cover w-full"
-						/>
-						<div className="">
-							<h3 className="w-full text-left text-2xl font-bold mb-6">
-								Front End
-							</h3>
-							<p className="mb-4">
-								The Front End of your website is what your users
-								see and interact with. It&apos;s the design, the
-								layout, the colours, the fonts, the images, the
-								buttons, the forms, the navigation and the way
-								it all works together. We use the latest
-								technology to ensure your website is fast,
-								responsive and looks great on all devices.
-							</p>
-							<p className="mb-2 mt-4 flex gap-2 items-center">
-								<MdOutlineCheck className="text-orange-400 text-xl" />
-								Highly customisable
-							</p>
-							<p className="mb-2 flex gap-2 items-center">
-								<MdOutlineCheck className="text-orange-400 text-xl" />
-								User-centric design
-							</p>
-							<p className="mb-2 flex gap-2 items-center">
-								<MdOutlineCheck className="text-orange-400 text-xl" />
-								Responsive design
-							</p>
-						</div>
-						<Image
-							src={ph1}
-							alt="Service Image"
-							width={600}
-							height={600}
-							className="object-cover w-full lg:col-start-2"
-						/>
-						<div className="lg:col-start-1 lg:row-start-2">
-							<h3 className="w-full text-left text-2xl font-bold mb-6">
-								Back End
-							</h3>
-							<p className="mb-4">
-								The Back End of your website is the engine room
-								of your website. It&apos;s where all the data is
-								stored and where all the magic happens. We use
-								Craft CMS for our custom websites and Shopify
-								for our eCommerce websites.
-							</p>
-							<p className="mb-2 mt-4 flex gap-2 items-center">
-								<MdOutlineCheck className="text-orange-400 text-xl" />
-								Safe data storage
-							</p>
-							<p className="mb-2 flex gap-2 items-center">
-								<MdOutlineCheck className="text-orange-400 text-xl" />
-								Reliable and secure authentication
-							</p>
-							<p className="mb-2 flex gap-2 items-center">
-								<MdOutlineCheck className="text-orange-400 text-xl" />
-								Scalable and flexible
-							</p>
-						</div>
-					</div>
-				</div>
-			</section> */}
             <section className="w-full flex flex-col items-center justify-center mx-auto bg-white text-black py-16">
                 <div className="w-full max-w-7xl px-4 md:px-8">
                     <h2 className="max-w-3xl mx-auto text-center text-2xl font-bold mb-16">
@@ -321,44 +248,6 @@ export default function WebDesign() {
                     </div>
                 </div>
             </section>
-            {/* <section className="w-full flex flex-col items-center justify-center mx-auto bg-white text-black px-24 lg:px-8 py-12">
-				<div className="w-full max-w-7xl">
-					<h2 className="mx-auto text-center text-3xl font-bold mb-12">
-						Web design projects we&apos;ve worked on
-					</h2>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-16 w-full max-w-7xl">
-						<div className="flex flex-col gap-16">
-							<ExperienceCard
-								id={1}
-								title="Alliance Coaching"
-								description="Web design & development for online coaching brand"
-								img={alliance}
-							/>
-
-							<ExperienceCard
-								id={4}
-								title="Voics"
-								description="Podcast as a service web design & development"
-								img={voics}
-							/>
-						</div>
-						<div className="flex flex-col gap-16">
-							<ExperienceCard
-								id={3}
-								title="Resilient Intent"
-								description="An educational platform for fitness professionals"
-								img={resilient1}
-							/>
-							<ExperienceCard
-								id={2}
-								title="Team Ignite"
-								description="Bodybuilding coaching brand digital presence"
-								img={ignite}
-							/>
-						</div>
-					</div>
-				</div>
-			</section> */}
             <section className="w-full flex flex-col items-center justify-center mx-auto bg-white text-black py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl px-4 md:px-8 w-full">
                     <h2 className="w-full text-left text-5xl font-bold tracking-tight mb-12 md:mb-0">More Services</h2>

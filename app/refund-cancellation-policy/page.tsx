@@ -42,18 +42,17 @@ const RefundCancellationPolicy = () => {
                 <pre className="leading-relaxed whitespace-pre-wrap" style={{ fontFamily: "sans-serif" }}>
                     {`Last Updated: 2024-06-27
 
-This notice applies across all websites that we own and operate and all services we provide, including our online and mobile software services products, and any other apps or services we may offer (our “services”)
-
-Cancellation and Refund Policy:
-The terms hereof shall constitute LaunchBit i.e. Agroha Solutions (“Company”) cancellation and refund policy in relation to the Solutions rendered on the Website (“Cancellation and Refund Policy”). Capitalized terms not defined herein shall have the meaning ascribed to them in the Terms of Use.
+The terms hereof shall constitute the cancellation and refund policy of LaunchBit, the customer-facing brand name for Agroha Solutions (“Company”), in relation to the services rendered on our website and any other apps or services we may offer (“Cancellation and Refund Policy”). Capitalized terms not defined herein shall have the meaning ascribed to them in the Terms of Use.
 
 Cancellation and Refunds by the Company:
-Please note that there may be certain orders that we are unable to accept and must cancel. We reserve the right, at our sole discretion, to refuse or cancel any order for any reason, without any claims or liability to pay finance charges or interest on the amount. Some situations that may result in your order being canceled include but are not limited to inaccuracies or errors in Solutions or pricing information, technical or technological problems or problems identified in relation to credit / debit fraud. We may also require additional verifications or information before accepting any order. We will contact you if all or any portion of your order is canceled or if additional information is required to accept your order. If your order is cancelled by the Company after your credit / debit card has been charged, the said amount will be refunded to that credit / debit card account.
+Please note that there may be certain projects or orders that we are unable to accept and must cancel. We reserve the right, at our sole discretion, to refuse or cancel any project or order for any reason, without any claims or liability to pay finance charges or interest on the amount. Some situations that may result in your order being canceled include, but are not limited to, inaccuracies or errors in project specifications, pricing information, technical or technological problems, or issues identified in relation to credit/debit fraud. We may also require additional verifications or information before accepting any project or order. We will contact you if all or any portion of your project or order is canceled or if additional information is required to accept your order. If your project or order is canceled by the Company after your credit/debit card has been charged, the said amount will be refunded to that credit/debit card account.
 
-Cancellation by you:
-You agree and acknowledge that unless stated otherwise you are not entitled to cancel any orders made by you on this Website. In the event you subscribe to any Solutions, the same may be cancelled by you one month prior to the provision of the Solutions, in such a case you will be refunded in the entire amount after deducting any bank charges that may have been applicable. Further during a period between one month and 14 days from when the Solutions are to be provided, if there is a cancellation request received, we may at our discretion refund 50% of the amount, after deducting any bank charges that may have been applicable, to you. A period of 14 days before the Solutions to be provided no request for cancelation will not be entertained by the Company.
+Cancellation by You:
+You agree and acknowledge that unless stated otherwise, you are not entitled to cancel any projects or orders made by you on our website. In the event you subscribe to any services, the same may be canceled by you one month prior to the commencement of the services, in which case you will be refunded the entire amount after deducting any bank charges that may have been applicable. Further, during a period between one month and 14 days before the services are to be provided, if a cancellation request is received, we may, at our discretion, refund 50% of the amount after deducting any bank charges that may have been applicable. A period of 14 days before the services are to be provided, no request for cancellation will be entertained by the Company.
 
-You could get in touch with us at ${process.env.NEXT_PUBLIC_CONTACT_EMAIL}.`}
+Contact Information:
+If you have any questions or concerns about our Cancellation and Refund Policy, please contact us at:
+Email: ${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                 </pre>
             </div>
         </main>

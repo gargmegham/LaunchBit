@@ -12,13 +12,15 @@ export default function Home() {
     return (
         <>
             <Header />
-            <Hero />
-            <LogoCloud />
-            <Experience />
-            <TestimonialsParallax />
-            <Services />
-            <CTA2 />
-            <FAQ />
+            <main className="bg-grid-amber-500/10" id="home">
+                <Hero />
+                <LogoCloud />
+                <Experience />
+                <TestimonialsParallax />
+                <Services />
+                <CTA2 />
+                <FAQ />
+            </main>
             <Footer />
         </>
     )

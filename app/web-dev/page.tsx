@@ -3,7 +3,7 @@ import Link from "next/link"
 
 import React from "react"
 
-import { config } from "@/config"
+import config from "@/config"
 import { getSEOTags } from "@/libs/seo"
 import stock1 from "@/public/stock1.webp"
 import {

@@ -41,7 +41,7 @@ const TOS = () => {
                 </h1>
 
                 <pre className="leading-relaxed whitespace-pre-wrap" style={{ fontFamily: "sans-serif" }}>
-                    {`Last Updated: 2024-06-03
+                    {`Last Updated: 2024-06-27
 
 These 'Software as a Service' Terms and Conditions (“SaaS Terms”) apply to and are incorporated by reference into the ordering document (the “Quote”) made by and between the Service Provider (as identified on the Quote) and the Customer (as identified on the Quote) and set forth the terms and conditions under which Service Provider will provide the Customer with access to certain applications as set forth on the Quote (“Application(s)”) and user documentation that Service Provider makes generally available in hard copy or electronic form to its general customer base in conjunction with the licensing of such Applications ("Documentation"). The Applications and the Documentation will hereinafter collectively be referred to as the “Software.”
 

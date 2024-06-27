@@ -40,7 +40,7 @@ const RefundCancellationPolicy = () => {
                     Refund & Cancellation Policy for {config.appName}
                 </h1>
                 <pre className="leading-relaxed whitespace-pre-wrap" style={{ fontFamily: "sans-serif" }}>
-                    {`Last Updated: 2024-06-03
+                    {`Last Updated: 2024-06-27
 
 This notice applies across all websites that we own and operate and all services we provide, including our online and mobile software services products, and any other apps or services we may offer (our “services”)
 

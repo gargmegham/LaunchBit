@@ -11,7 +11,7 @@ export const metadata = getSEOTags({
 
 const TOS = () => {
     return (
-        <main id="tos" className="text-black min-h-screen bg-grid-amber-500/10">
+        <main id="tos" className="text-black min-h-screen bg-grid-amber-500/10 px-10">
             <Header />
             <div className="max-w-xl mx-auto relative z-10 mb-10">
                 <h1 className="text-3xl mt-10 font-extrabold pb-6 text-zinc-900">

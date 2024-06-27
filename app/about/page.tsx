@@ -1,5 +1,6 @@
 import Image from "next/image"
 
+import config from "@/config"
 import { getSEOTags } from "@/libs/seo"
 import stock3 from "@/public/stock3.webp"
 import stock4 from "@/public/stock4.webp"
@@ -9,7 +10,7 @@ import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 
 export const metadata = getSEOTags({
-    title: "LaunchBit | About",
+    title: `${config.appName} | About`,
     canonicalUrlRelative: "/about",
 })
 

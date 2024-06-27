@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import React from "react"
 
+import config from "@/config"
 import { getSEOTags } from "@/libs/seo"
 import stock1 from "@/public/stock1.webp"
 import stock2 from "@/public/stock2.webp"
@@ -19,11 +20,10 @@ import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 
-/* import ExperienceCard from "@/components/ExperienceCard"; */
 import FAQ from "./components/FAQ"
 
 export const metadata = getSEOTags({
-    title: "Web Design Agency Manchester | LaunchBit",
+    title: `Web Design Agency Manchester | ${config.appName}`,
     canonicalUrlRelative: "/web-design",
 })
 

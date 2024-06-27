@@ -42,19 +42,9 @@ const PrivacyPolicy = () => {
                 <pre className="leading-relaxed whitespace-pre-wrap" style={{ fontFamily: "sans-serif" }}>
                     {`Last Updated: 2024-06-27
 
-This notice applies across all websites that we own and operate and all services we provide, including our online and mobile software services products, and any other apps or services we may offer (our “services”)
+At ${config.appName}, the customer-facing brand name for Agroha Solutions (“Company”, “we”, “us”, or “our”), we respect your privacy and are committed to protecting it through our compliance with this Privacy Policy. This policy describes the types of information we may collect from you or that you may provide when you visit our website or use our services, and our practices for collecting, using, maintaining, protecting, and disclosing that information.
 
-When we say “personal data”, we mean information that would identify you, like your name, email, address, telephone number, bank account details, payment information and so on. The same would apply to information that could identify other users in your teams that are shared with ${config.appName}.
-
-If you can't be identified (for example, when personal data has been aggregated and anonymised), the information wouldn't be personal data anymore, and this notice doesn't apply.
-
-We may need to update this notice from time to time. When a significant change is made, we'll make sure we let you know – usually by sending you an email.
-
-Clause 1: Who are “we”?
-
-When we refer to “we” (or “our” or “us'), that means ${config.appName} and all its wholly owned subsidiaries, including the primary operating entity, ${config.appName} Our headquarters is located in India. Address details for all ${config.appName} offices are available on our “Contact Us” page.
-
-Clause 2: Our Principles of Data Protection
+Clause 1: Our Principles of Data Protection
 
 Our approach to data protection is built around three key principles:
 
@@ -62,7 +52,7 @@ Our approach to data protection is built around three key principles:
 2. Enablement: We have efficient use of personal data to enhance productivity and growth and to have you make connections between the information you have and the insights you want.
 3. Security: We adopt industry leading approaches to secure the personal data entrusted to us.
 
-Clause 3: How we collect your data
+Clause 2: How we collect your data
 
 When you visit our websites or use our services, we collect personal data. The ways we collect it can be broadly categorised into the following:
 
@@ -88,7 +78,7 @@ If we don't collect your personal data, we may be unable to provide you with all
 
 If you're someone who doesn't have a relationship with us, but believe that a ${config.appName} subscriber has entered your personal data into our websites or services, you'll need to contact that ${config.appName} subscriber for any questions you have about your personal data (including where you want to access, correct, amend, or request that the user delete, your personal data).
 
-Clause 4: How we use your data
+Clause 3: How we use your data
 
 First and foremost, we use your personal data to operate our websites and provide you with any services you've requested, and to manage our relationship with you. We don't use your personal data for any other purposes. We only use your personal data for the following purposes:
 
@@ -105,29 +95,29 @@ First and foremost, we use your personal data to operate our websites and provid
 
 4. To protect: So that we can detect and prevent any fraudulent or malicious activity, and make sure that everyone is using our websites and services fairly and in accordance with our terms of use.
 
-Clause 5: We don't share your data with any third party without your consent.
+Clause 4: We don't share your data with any third party without your consent.
 
-Clause 6: International Data Transfers
+Clause 5: International Data Transfers
 
 1. When we share data, it may be transferred to, and processed in, countries other than the country you live in. These countries may have laws which are different from what you're used to. Rest assured, where we disclose personal data to a third party in another country, we put safeguards in place to ensure your personal data remains protected.
 
 2. For individuals in the European Economic Area (EEA), this means that your data may be transferred outside of the EEA. Where your personal data is transferred outside the EEA, it will only be transferred to countries that have been identified as providing adequate protection for EEA data (like New Zealand), or to a third party where we have approved transfer mechanisms in place to protect your personal data – i.e., by entering into the European Commission's Standard Contractual Clauses, or by ensuring the entity is Privacy Shield certified (for transfers to US-based third parties). For further information, please contact us using the details set out in the “How to contact us” section below.
 
-Clause 7: Data obtained from Google
+Clause 6: Data obtained from Google
 
 ${config.appName}'s use and transfer of information received from Google APIs to any other app will adhere to [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes) including the [Limited Use](https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes) requirements.
 
-Clause 8: Security
+Clause 7: Security
 
 Security is a priority for us when it comes to your personal data. We're committed to protecting your personal data and have appropriate technical and organisational measures in place to make sure that happens.
 
-Clause 9: Retention
+Clause 8: Retention
 
 1. The length of time we keep your personal data depends on what it is and whether we have an ongoing business need to retain it (for example, to provide you with a service you've requested or to comply with applicable legal, tax or accounting requirements).
 
 2. We'll retain your personal data for as long as we have a relationship with you and for a period of time afterwards where we have an ongoing business need to retain it, in accordance with our data retention policies and practices. Following that period, we'll make sure it's deleted or anonymised.
 
-Clause 10: Your Rights
+Clause 9: Your Rights
 
 1. It's your personal data and you have certain rights relating to it. When it comes to marketing communications, you can ask us not to send you these at any time – just follow the unsubscribe instructions contained in the marketing communication, or send your request to ${process.env.NEXT_PUBLIC_CONTACT_EMAIL}.
 

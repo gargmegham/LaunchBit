@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import React from "react"
 
+import config from "@/config"
 import { getSEOTags } from "@/libs/seo"
 import gymshark from "@/public/brands/gymshark.webp"
 import huel from "@/public/brands/huel.webp"
@@ -27,7 +28,7 @@ import Header from "@/components/Header"
 import FAQ from "./components/FAQ"
 
 export const metadata = getSEOTags({
-    title: "Shopify Agency Manchester | LaunchBit",
+    title: `Shopify Agency Manchester | ${config.appName}`,
     canonicalUrlRelative: "/shopify",
 })
 
@@ -49,8 +50,8 @@ export default function WebDesign() {
                     </h3>
                     <div>
                         <p className="mb-12">
-                            Shopify is our cheaper option of eCommerce that we offer here at LaunchBit. Our team of
-                            Shopify experts help people build an online store with hundreds of built-in features, and
+                            Shopify is our cheaper option of eCommerce that we offer here at {config.appName}. Our team
+                            of Shopify experts help people build an online store with hundreds of built-in features, and
                             has the ability to integrate with third party apps. You can sell products directly on your
                             website, and across multiple marketplaces including social media. We have experience across
                             various different industries, so you can trust you&apos;re in good hands.
@@ -65,36 +66,6 @@ export default function WebDesign() {
                 </div>
             </section>
             <section className="w-full flex flex-col items-center justify-center mx-auto bg-white text-black px-4 md:px-8 py-16">
-                {/* <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-24 relative">
-					<div className="row-start-2 lg:row-start-1 transform -translate-y-[150px] lg:transform-none">
-						<h2 className="w-full text-left text-2xl font-bold mb-12">
-							We&apos;re proud to be recognised as a verified Craft CMS
-							and Craft Commerce partner.
-						</h2>
-						<p className="mb-12">
-							Craft states that a Craft Verified Partner has
-							proven Craft CMS development experience, deep
-							knowledge of Craft and exhibits professional and
-							reliable business practices. You can put your trust
-							in our team of Craft experts and have faith that
-							you&apos;re working with an agency who knows Craft CMS
-							and who has been reviewed by Pixel & Tonic
-							themselves.
-						</p>
-						<Link
-							href="/contact"
-							className="btn xl:px-6 bg-white border-2 border-white hover:bg-orange-400 hover:border-orange-400 text-black hover:text-white transition-all ease-in-out duration-300 rounded-sm">
-							Book a Call
-						</Link>
-					</div>
-					<Image
-						src={ph1}
-						alt="Service Image"
-						width={900}
-						height={900}
-						className="object-cover transform -translate-y-[150px] h-[700px]"
-					/>
-				</div> */}
                 <div className="w-full max-w-7xl">
                     <h2 className="w-full text-center text-2xl font-bold mb-12">
                         Some of the biggest brands use Shopify
@@ -234,44 +205,6 @@ export default function WebDesign() {
                     </div>
                 </div>
             </section>
-            {/* <section className="w-full flex flex-col items-center justify-center mx-auto bg-white text-black px-24 lg:px-8 py-12">
-				<div className="w-full max-w-7xl">
-					<h2 className="mx-auto text-center text-3xl font-bold mb-12">
-						Web design projects we&apos;ve worked on
-					</h2>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-16 w-full max-w-7xl">
-						<div className="flex flex-col gap-16">
-							<ExperienceCard
-								id={1}
-								title="Alliance Coaching"
-								description="Web design & development for online coaching brand"
-								img={alliance}
-							/>
-
-							<ExperienceCard
-								id={4}
-								title="Voics"
-								description="Podcast as a service web design & development"
-								img={voics}
-							/>
-						</div>
-						<div className="flex flex-col gap-16">
-							<ExperienceCard
-								id={3}
-								title="Resilient Intent"
-								description="An educational platform for fitness professionals"
-								img={resilient1}
-							/>
-							<ExperienceCard
-								id={2}
-								title="Team Ignite"
-								description="Bodybuilding coaching brand digital presence"
-								img={ignite}
-							/>
-						</div>
-					</div>
-				</div>
-			</section> */}
             <section className="w-full flex flex-col items-center justify-center mx-auto bg-white text-black py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl px-4 md:px-8 w-full">
                     <h2 className="w-full text-left text-5xl font-bold tracking-tight mb-12 md:mb-0">More Services</h2>

@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import React from "react"
 
+import config from "@/config"
 import { getSEOTags } from "@/libs/seo"
 import stock1 from "@/public/stock1.webp"
 import stock2 from "@/public/stock2.webp"
@@ -12,11 +13,10 @@ import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 
-/* import ExperienceCard from "@/components/ExperienceCard"; */
 import FAQ from "./components/FAQ"
 
 export const metadata = getSEOTags({
-    title: "eCommerce Agency Manchester | LaunchBit",
+    title: `eCommerce Agency Manchester | ${config.appName}`,
     canonicalUrlRelative: "/ecom",
 })
 
@@ -35,10 +35,10 @@ export default function WebDesign() {
                     </h3>
                     <div>
                         <p className="mb-12">
-                            LaunchBit have the ability to research your competition, the industry and create a shopping
-                            experience that will convert sales. Online you can target specific customers in various
-                            locations, and adapt your marketing spend to your needs. Having an online presence in the
-                            modern day is a given, but having a website that performs well is more important.
+                            {config.appName} have the ability to research your competition, the industry and create a
+                            shopping experience that will convert sales. Online you can target specific customers in
+                            various locations, and adapt your marketing spend to your needs. Having an online presence
+                            in the modern day is a given, but having a website that performs well is more important.
                         </p>
                         <Link
                             href="/new-project"

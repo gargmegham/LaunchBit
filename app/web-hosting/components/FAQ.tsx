@@ -3,8 +3,7 @@
 import { useRef, useState } from "react"
 import type { JSX } from "react"
 
-// <FAQ> component is a lsit of <Item> component
-// Just import the FAQ & add your FAQ content to the const faqList arrayy below.
+import config from "@/config"
 
 interface FAQItemProps {
     question: string
@@ -26,15 +25,16 @@ const faqList: FAQItemProps[] = [
         ),
     },
     {
-        question: "Why host with LaunchBit?",
+        question: `Why host with ${config.appName}?`,
         answer: (
             <p>
-                Choosing to host with LaunchBit means benefiting from a web hosting service that prioritizes speed,
-                reliability, and security. Our hosting solutions are optimized for performance, ensuring that your
-                website loads quickly and runs smoothly. We offer 24/7 monitoring and support to promptly address any
-                issues and minimize downtime. Additionally, our hosting packages come with enhanced security measures to
-                protect your website from threats. By hosting with LaunchBit, you&apos;re not just getting server space;
-                you&apos;re gaining a partner dedicated to ensuring your online presence is robust and effective.
+                Choosing to host with {config.appName} means benefiting from a web hosting service that prioritizes
+                speed, reliability, and security. Our hosting solutions are optimized for performance, ensuring that
+                your website loads quickly and runs smoothly. We offer 24/7 monitoring and support to promptly address
+                any issues and minimize downtime. Additionally, our hosting packages come with enhanced security
+                measures to protect your website from threats. By hosting with {config.appName}, you&apos;re not just
+                getting server space; you&apos;re gaining a partner dedicated to ensuring your online presence is robust
+                and effective.
             </p>
         ),
     },
@@ -42,12 +42,12 @@ const faqList: FAQItemProps[] = [
         question: "How much does Web Hosting cost?",
         answer: (
             <div className="space-y-2 leading-relaxed">
-                The cost of web hosting with LaunchBit varies depending on the type of hosting service you require
-                (shared, VPS, dedicated, or cloud hosting), as well as the resources needed for your website, such as
-                disk space, bandwidth, and additional features like SSL certificates, email hosting, and more. Our
-                hosting plans start at a competitive price point for basic websites and scale up based on your specific
-                needs and traffic demands. We offer transparent pricing with no hidden fees and can provide a tailored
-                quote based on an evaluation of your hosting requirements.
+                The cost of web hosting with {config.appName} varies depending on the type of hosting service you
+                require (shared, VPS, dedicated, or cloud hosting), as well as the resources needed for your website,
+                such as disk space, bandwidth, and additional features like SSL certificates, email hosting, and more.
+                Our hosting plans start at a competitive price point for basic websites and scale up based on your
+                specific needs and traffic demands. We offer transparent pricing with no hidden fees and can provide a
+                tailored quote based on an evaluation of your hosting requirements.
             </div>
         ),
     },

@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className=" flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col px-8 py-24 border-t border-base-content/10 mx-4 md:mx-8">
                     <div className="w-72 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
                         <Link href="/#" aria-current="page" className="">
-                            <h1 className="text-4xl font-bold">LaunchBit</h1>
+                            <h1 className="text-4xl font-bold">{config.appName}</h1>
                         </Link>
 
                         <p className="mt-3 text-sm text-gray-900 text-opacity-75">{config.appDescription}</p>

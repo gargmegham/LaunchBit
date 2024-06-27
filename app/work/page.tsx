@@ -1,5 +1,6 @@
 import React from "react"
 
+import config from "@/config"
 import { getSEOTags } from "@/libs/seo"
 import alliance from "@/public/alliance.webp"
 import ignite from "@/public/ignite.webp"
@@ -13,7 +14,7 @@ import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 
 export const metadata = getSEOTags({
-    title: "LaunchBit | Our Work",
+    title: `${config.appName} | Our Work`,
     canonicalUrlRelative: "/work",
 })
 

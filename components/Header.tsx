@@ -40,7 +40,7 @@ export function Menu({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: (isOpe
             >
                 <div className="flex items-center justify-between">
                     <Link className="" title={`${config.appName} homepage`} href="/">
-                        <h1 className="text-4xl font-bold">LaunchBit</h1>
+                        <h1 className="text-4xl font-bold">{config.appName}</h1>
                     </Link>
                     <button type="button" className="-m-2.5 rounded-md p-2.5" onClick={() => setIsOpen(false)}>
                         <span className="sr-only">Close menu</span>
@@ -91,7 +91,7 @@ export default function Header() {
                     >
                         <div className="flex lg:flex-1">
                             <Link className="py-4 flex items-center gap-x-2" href="/">
-                                <Image src="/logo.svg" width={48} height={48} alt="LaunchBit Logo" />
+                                <Image src="/logo.svg" width={48} height={48} alt={`${config.appName} Logo`} />
                                 <h1 className="text-4xl font-bold">
                                     <span className="text-[#FFD015]">Launch</span>
                                     <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#FF1F00] to-[#FF8B04] bg-opacity-50">

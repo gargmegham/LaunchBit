@@ -43,15 +43,15 @@ const TOS = () => {
                 <pre className="leading-relaxed whitespace-pre-wrap" style={{ fontFamily: "sans-serif" }}>
                     {`Last Updated: 2024-06-27
 
-Welcome to LaunchBit, the customer-facing brand name for Agroha Solutions. By accessing or using our website and services, you agree to comply with and be bound by the following terms and conditions (“Terms”). Please review these Terms carefully. If you do not agree to these Terms, you should not use our website or services.
+Welcome to ${config.appName}, the customer-facing brand name for Agroha Solutions. By accessing or using our website and services, you agree to comply with and be bound by the following terms and conditions (“Terms”). Please review these Terms carefully. If you do not agree to these Terms, you should not use our website or services.
 
 1. Introduction
-LaunchBit, operated by Agroha Solutions (“Company”, “we”, “us”, or “our”), develops software products both for others and for sale under our own brand. Our services are available to customers worldwide.
+${config.appName}, operated by Agroha Solutions (“Company”, “we”, “us”, or “our”), develops software products both for others and for sale under our own brand. Our services are available to customers worldwide.
 
 2. Definitions
-Services: All services provided by LaunchBit, including but not limited to software development, consultation, and products such as Servcy, ShieldPeer, and Jotify.
+Services: All services provided by ${config.appName}, including but not limited to software development, consultation, and products such as Servcy, ShieldPeer, and Jotify.
 User: Any person or entity using our services.
-Website: The website owned and operated by LaunchBit.
+Website: The website owned and operated by ${config.appName}.
 
 3. Acceptance of Terms
 By using our website or services, you agree to be bound by these Terms. If you do not agree to these Terms, you must not use our services.
@@ -66,7 +66,7 @@ You agree to use the services only for lawful purposes and in a manner that does
 Our Privacy Policy, which sets out how we will use your information, can be found at ${config.domainName}/privacy-policy. By using our website or services, you consent to the processing described therein and warrant that all data provided by you is accurate.
 
 7. Intellectual Property
-All content included on the website, unless uploaded by users, is the property of LaunchBit, our affiliates, or other relevant third parties. In these Terms, “Content” means any text, graphics, images, audio, video, software, data compilations, page layout, underlying code, and software and any other form of information capable of being stored in a computer that appears on or forms part of this website.
+All content included on the website, unless uploaded by users, is the property of ${config.appName}, our affiliates, or other relevant third parties. In these Terms, “Content” means any text, graphics, images, audio, video, software, data compilations, page layout, underlying code, and software and any other form of information capable of being stored in a computer that appears on or forms part of this website.
 
 8. Customer Obligations
 Customers must provide accurate information necessary for the provision of services and are responsible for maintaining the confidentiality of their account credentials. Customers must notify us immediately of any unauthorized use of their account or any other breach of security.
@@ -78,10 +78,10 @@ All orders placed through our website are subject to our acceptance. We reserve 
 Our Cancellation and Refund Policy, which sets out the terms of cancellation and refunds, can be found at ${config.domainName}/refund-cancellation-policy.
 
 11. Limitation of Liability
-To the fullest extent permitted by law, LaunchBit, its affiliates, and their respective directors, employees, and agents will not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from (a) your use of the services; (b) any unauthorized access to or use of our services and/or any personal information stored therein; (c) any interruption or cessation of transmission to or from the services; (d) any bugs, viruses, trojan horses, or the like that may be transmitted to or through our services by any third party; (e) any errors or omissions in any content or for any loss or damage incurred as a result of the use of any content posted, emailed, transmitted, or otherwise made available through the services; and/or (f) the defamatory, offensive, or illegal conduct of any third party.
+To the fullest extent permitted by law, ${config.appName}, its affiliates, and their respective directors, employees, and agents will not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from (a) your use of the services; (b) any unauthorized access to or use of our services and/or any personal information stored therein; (c) any interruption or cessation of transmission to or from the services; (d) any bugs, viruses, trojan horses, or the like that may be transmitted to or through our services by any third party; (e) any errors or omissions in any content or for any loss or damage incurred as a result of the use of any content posted, emailed, transmitted, or otherwise made available through the services; and/or (f) the defamatory, offensive, or illegal conduct of any third party.
 
 12. Indemnification
-You agree to indemnify, defend, and hold harmless LaunchBit, its affiliates, and their respective directors, officers, employees, and agents from and against all claims, damages, losses, liabilities, costs, and expenses (including but not limited to reasonable attorneys' fees) arising out of or related to (i) your use of the services; (ii) any breach of these Terms; (iii) any violation of applicable laws, rules, or regulations; or (iv) your content.
+You agree to indemnify, defend, and hold harmless ${config.appName}, its affiliates, and their respective directors, officers, employees, and agents from and against all claims, damages, losses, liabilities, costs, and expenses (including but not limited to reasonable attorneys' fees) arising out of or related to (i) your use of the services; (ii) any breach of these Terms; (iii) any violation of applicable laws, rules, or regulations; or (iv) your content.
 
 13. Governing Law
 These Terms and your use of the services shall be governed by and construed in accordance with the laws of the jurisdiction in which Agroha Solutions is based, without regard to its conflict of law principles.

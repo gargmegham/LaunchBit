@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import React from "react"
 
+import { config } from "@/config"
 import { getSEOTags } from "@/libs/seo"
 import stock1 from "@/public/stock1.webp"
 import {
@@ -18,11 +19,10 @@ import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 
-/* import ExperienceCard from "@/components/ExperienceCard"; */
 import FAQ from "./components/FAQ"
 
 export const metadata = getSEOTags({
-    title: "Web Development Agency Manchester | LaunchBit",
+    title: "Web Development Agency Manchester | ${config.appName}",
     canonicalUrlRelative: "/web-dev",
 })
 
@@ -46,10 +46,10 @@ export default function WebDesign() {
                             user-friendliness is crucial for providing a pleasant user experience.
                             <br />
                             <br />
-                            Regardless of whether you&apos;re just starting out or are an established brand, LaunchBit
-                            meticulously considers each phase of a website&apos;s journey—from research and planning,
-                            through design and development, to user and browser testing. Our goal is to create a website
-                            that not only aligns with your brand but also fulfills your objectives.
+                            Regardless of whether you&apos;re just starting out or are an established brand,{" "}
+                            {config.appName} meticulously considers each phase of a website&apos;s journey—from research
+                            and planning, through design and development, to user and browser testing. Our goal is to
+                            create a website that not only aligns with your brand but also fulfills your objectives.
                         </p>
                         <Link
                             href="/new-project"

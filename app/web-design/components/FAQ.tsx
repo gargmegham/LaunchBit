@@ -3,8 +3,7 @@
 import { useRef, useState } from "react"
 import type { JSX } from "react"
 
-// <FAQ> component is a lsit of <Item> component
-// Just import the FAQ & add your FAQ content to the const faqList arrayy below.
+import config from "@/config"
 
 interface FAQItemProps {
     question: string
@@ -37,9 +36,9 @@ const faqList: FAQItemProps[] = [
         question: "Do you redesign existing websites?",
         answer: (
             <div className="space-y-2 leading-relaxed">
-                Yes, we do &quot;LaunchBit&quot; websites (excuse the pun), we specialize in both creating new websites
-                and redesigning existing ones. A website redesign can be crucial for improving usability, updating
-                content, and enhancing SEO. We work closely with you to retain your site&apos;s strengths while
+                Yes, we do &quot;{config.appName}&quot; websites (excuse the pun), we specialize in both creating new
+                websites and redesigning existing ones. A website redesign can be crucial for improving usability,
+                updating content, and enhancing SEO. We work closely with you to retain your site&apos;s strengths while
                 transforming its look and functionality to meet current web standards.
             </div>
         ),

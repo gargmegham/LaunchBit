@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import React from "react"
 
+import config from "@/config"
 import { getSEOTags } from "@/libs/seo"
 import stock1 from "@/public/stock1.webp"
 import {
@@ -20,11 +21,10 @@ import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 
-/* import ExperienceCard from "@/components/ExperienceCard"; */
 import FAQ from "./components/FAQ"
 
 export const metadata = getSEOTags({
-    title: "SEO Agency Manchester | LaunchBit",
+    title: `SEO Agency Manchester | ${config.appName}`,
     canonicalUrlRelative: "/seo",
 })
 
@@ -44,10 +44,10 @@ export default function SEO() {
                     <div>
                         <p className="mb-12">
                             SEO is very important if your website is a tool to generate business, whether that be
-                            selling services or products. The SEO agency team here at LaunchBit have extensive experience
-                            managing SEO campaigns for businesses looking to outrank competitors and compete in search
-                            engines for relevant search terms. We also have experience with small businesses seeking
-                            local customers.
+                            selling services or products. The SEO agency team here at {config.appName} have extensive
+                            experience managing SEO campaigns for businesses looking to outrank competitors and compete
+                            in search engines for relevant search terms. We also have experience with small businesses
+                            seeking local customers.
                             <br />
                             <br />
                             No SEO strategy is the same, we look at each project individually and develop a seo campaign

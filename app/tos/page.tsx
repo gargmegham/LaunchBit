@@ -1,9 +1,8 @@
-import Link from "next/link"
-
 import config from "@/config"
 import { getSEOTags } from "@/libs/seo"
 
-import { BoxesCore } from "@/components/BgBoxes"
+import Footer from "@/components/Footer"
+import Header from "@/components/Header"
 
 export const metadata = getSEOTags({
     title: `Terms and Conditions | ${config.appName}`,
@@ -12,31 +11,10 @@ export const metadata = getSEOTags({
 
 const TOS = () => {
     return (
-        <main id="tos" className="bg-black text-neutral-300">
-            <BoxesCore />
-            <div className="max-w-xl mx-auto p-5 relative z-10">
-                <div className="flex justify-end">
-                    <Link
-                        href="/"
-                        className="flex relative bg-black border text-sm font-medium border-white/[0.2] text-white px-4 py-2 rounded-full"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-5 h-5"
-                        >
-                            <path
-                                fillRule="evenodd"
-                                d="M15 10a.75.75 0 01-.75.75H7.612l2.158 1.96a.75.75 0 11-1.04 1.08l-3.5-3.25a.75.75 0 010-1.08l3.5-3.25a.75.75 0 111.04 1.08L7.612 9.25h6.638A.75.75 0 0115 10z"
-                                clipRule="evenodd"
-                            />
-                        </svg>{" "}
-                        <span>Home</span>
-                        <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-amber-500 to-transparent h-px" />
-                    </Link>
-                </div>
-                <h1 className="text-3xl mt-10 font-extrabold pb-6 text-neutral-400">
+        <main id="tos" className="text-black min-h-screen bg-grid-amber-500/10">
+            <Header />
+            <div className="max-w-xl mx-auto relative z-10 mb-10">
+                <h1 className="text-3xl mt-10 font-extrabold pb-6 text-zinc-900">
                     Terms and Conditions for {config.appName}
                 </h1>
 
@@ -93,10 +71,10 @@ Any disputes arising out of or relating to these Terms or the services shall be 
 If any provision of these Terms is found to be unlawful, void, or for any reason unenforceable, then that provision shall be deemed severable from these Terms and shall not affect the validity and enforceability of any remaining provisions.
 
 16. Contact Information
-If you have any questions about these Terms, please contact us at:
-Email: ${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+If you have any questions about these Terms, please contact us at ${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                 </pre>
             </div>
+            <Footer />
         </main>
     )
 }

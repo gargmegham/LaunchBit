@@ -1,9 +1,8 @@
-import Link from "next/link"
-
 import config from "@/config"
 import { getSEOTags } from "@/libs/seo"
 
-import { BoxesCore } from "@/components/BgBoxes"
+import Footer from "@/components/Footer"
+import Header from "@/components/Header"
 
 export const metadata = getSEOTags({
     title: `Refund & Cancellation Policy | ${config.appName}`,
@@ -12,31 +11,10 @@ export const metadata = getSEOTags({
 
 const RefundCancellationPolicy = () => {
     return (
-        <main id="privacy-policy" className="bg-black text-neutral-300">
-            <BoxesCore />
-            <div className="max-w-xl mx-auto p-5 relative z-10">
-                <div className="flex justify-end">
-                    <Link
-                        href="/"
-                        className="flex relative bg-black border text-sm font-medium border-white/[0.2] text-white px-4 py-2 rounded-full"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-5 h-5"
-                        >
-                            <path
-                                fillRule="evenodd"
-                                d="M15 10a.75.75 0 01-.75.75H7.612l2.158 1.96a.75.75 0 11-1.04 1.08l-3.5-3.25a.75.75 0 010-1.08l3.5-3.25a.75.75 0 111.04 1.08L7.612 9.25h6.638A.75.75 0 0115 10z"
-                                clipRule="evenodd"
-                            />
-                        </svg>{" "}
-                        <span>Home</span>
-                        <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-amber-500 to-transparent h-px" />
-                    </Link>
-                </div>
-                <h1 className="text-3xl mt-10 font-extrabold pb-6 text-neutral-400">
+        <main id="privacy-policy" className="text-black min-h-screen bg-grid-amber-500/10">
+            <Header />
+            <div className="max-w-xl mx-auto relative z-10 mb-10">
+                <h1 className="text-3xl mt-10 font-extrabold pb-6 text-zinc-900">
                     Refund & Cancellation Policy for {config.appName}
                 </h1>
                 <pre className="leading-relaxed whitespace-pre-wrap" style={{ fontFamily: "sans-serif" }}>
@@ -51,10 +29,10 @@ Cancellation by You:
 You agree and acknowledge that unless stated otherwise, you are not entitled to cancel any projects or orders made by you on our website. In the event you subscribe to any services, the same may be canceled by you one month prior to the commencement of the services, in which case you will be refunded the entire amount after deducting any bank charges that may have been applicable. Further, during a period between one month and 14 days before the services are to be provided, if a cancellation request is received, we may, at our discretion, refund 50% of the amount after deducting any bank charges that may have been applicable. A period of 14 days before the services are to be provided, no request for cancellation will be entertained by the Company.
 
 Contact Information:
-If you have any questions or concerns about our Cancellation and Refund Policy, please contact us at:
-Email: ${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+If you have any questions or concerns about our Cancellation and Refund Policy, please contact us at ${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                 </pre>
             </div>
+            <Footer />
         </main>
     )
 }

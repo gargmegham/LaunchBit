@@ -22,6 +22,10 @@ const links: {
         label: "Services",
     },
     {
+        href: "/products",
+        label: "Products",
+    },
+    {
         href: "/about",
         label: "About",
     },

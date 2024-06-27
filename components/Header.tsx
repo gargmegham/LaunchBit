@@ -38,13 +38,18 @@ const links: {
 export function Menu({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: (isOpen: boolean) => void }) {
     useLockBodyScroll()
     return (
-        <div className={`w-full relative z-50 ${isOpen ? "" : "hidden"}`}>
+        <div className={`w-full relative z-[100] ${isOpen ? "" : "hidden"}`}>
             <div
                 className={`fixed w-full inset-y-0 right-0 z-10 px-8 py-4 overflow-y-auto bg-gray-100/50 backdrop-blur-lg sm:max-w-sm sm:ring-1 sm:ring-neutral/10 transform origin-right transition ease-in-out duration-300`}
             >
                 <div className="flex items-center justify-between">
                     <Link className="" title={`${config.appName} homepage`} href="/">
-                        <h1 className="text-4xl font-bold">{config.appName}</h1>
+                        <h1 className="text-4xl font-bold">
+                            <span className="text-[#FFD015]">Launch</span>
+                            <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#FF1F00] to-[#FF8B04] bg-opacity-50">
+                                Bit
+                            </span>
+                        </h1>
                     </Link>
                     <button type="button" className="-m-2.5 rounded-md p-2.5" onClick={() => setIsOpen(false)}>
                         <span className="sr-only">Close menu</span>
@@ -90,12 +95,18 @@ export default function Header() {
             <Headroom>
                 <header className="bg-gray-100/50 backdrop-blur-lg overflow-hidden max-w-7xl mt-6 mx-4 rounded-full xl:mx-auto">
                     <nav
-                        className="container flex items-center justify-between px-12 py-4 mx-auto max-w-7xl text-black"
+                        className="container flex items-center justify-between px-12 max-sm:px-8 py-4 mx-auto max-w-7xl text-black"
                         aria-label="Global"
                     >
                         <div className="flex lg:flex-1">
                             <Link className="py-4 flex items-center gap-x-2" href="/">
-                                <Image src="/logo.svg" width={48} height={48} alt={`${config.appName} Logo`} />
+                                <Image
+                                    src="/logo.svg"
+                                    width={48}
+                                    height={48}
+                                    alt={`${config.appName} Logo`}
+                                    className="max-sm:hidden"
+                                />
                                 <h1 className="text-4xl font-bold">
                                     <span className="text-[#FFD015]">Launch</span>
                                     <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#FF1F00] to-[#FF8B04] bg-opacity-50">

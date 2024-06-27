@@ -28,7 +28,7 @@ const products = [
 
 export default function Products() {
     return (
-        <main id="products">
+        <main id="products" className="bg-grid-amber-500/10">
             <Header />
             <section className="my-20 min-h-[50vh] lg:flex lg:justify-center lg:items-center grid grid-cols-1 gap-16">
                 {products.map((product, index) => (

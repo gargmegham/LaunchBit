@@ -16,7 +16,7 @@ export const metadata = getSEOTags({
 
 export default function About() {
     return (
-        <>
+        <main className="bg-grid-amber-500/10">
             <Header />
             <section
                 id="work"
@@ -85,6 +85,6 @@ export default function About() {
             </section>
             <Contact />
             <Footer />
-        </>
+        </main>
     )
 }

@@ -12,10 +12,10 @@ export const metadata = getSEOTags({
 
 export default function ContactPage() {
     return (
-        <>
+        <main className="bg-grid-amber-500/10">
             <Header />
             <Contact />
             <Footer />
-        </>
+        </main>
     )
 }

@@ -6,7 +6,7 @@ const config = {
     appName: "LaunchBit",
     appDescription:
         "Helping you launch your next big idea. We take care of the technical stuff so you can focus on selling your product.",
-    domainName: "www.launchbit.in",
+    domainName: "launchbit.meghamgarg.com",
     colors: {
         theme: "light",
         main: themes[`[data-theme=light]`]["primary"],

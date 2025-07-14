@@ -75,7 +75,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
         <div className="[perspective:1200px] [transform-style:preserve-3d]">
             <li
                 ref={slideRef}
-                className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[70vmin] mx-[4vmin] z-10 "
+                className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[90vmin] sm:w-[80vmin] lg:w-[70vmin] h-[90vmin] sm:h-[80vmin] lg:h-[70vmin] mx-[4vmin] z-10 "
                 onClick={() => handleSlideClick(index)}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
@@ -174,7 +174,7 @@ const Carousel = ({ slides }: CarouselProps) => {
     const id = useId()
 
     return (
-        <div className="relative w-[70vmin] h-[70vmin] mx-auto" aria-labelledby={`carousel-heading-${id}`}>
+        <div className="relative w-[90vmin] sm:w-[80vmin] lg:w-[70vmin] h-[90vmin] sm:h-[80vmin] lg:h-[70vmin] mx-auto" aria-labelledby={`carousel-heading-${id}`}>
             <ul
                 className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out"
                 style={{
@@ -261,33 +261,33 @@ export const Work = () => {
                 ></div>
             </div>
 
-            <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
+            <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div className="mb-6">
-                    <span className="text-sm font-semibold tracking-wider bg-gradient-to-r from-yellow-500 to-amber-500 bg-clip-text text-transparent uppercase">
+                    <span className="text-xs sm:text-sm font-semibold tracking-wider bg-gradient-to-r from-yellow-500 to-amber-500 bg-clip-text text-transparent uppercase">
                         Our Work
                     </span>
                 </div>
 
-                <h2 className={`text-5xl md:text-7xl font-bold text-white mb-8 leading-tight ${playfair.className}`}>
+                <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight ${playfair.className}`}>
                     Portfolio{" "}
                     <span className="bg-gradient-to-t from-amber-600 via-yellow-400 to-white bg-clip-text text-transparent">
                         Showcase
                     </span>
                 </h2>
 
-                <div className="max-w-4xl mx-auto">
-                    <p className="text-xl md:text-2xl text-white font-bold mb-6">
+                <div className="max-w-4xl mx-auto mb-8 sm:mb-12">
+                    <p className="text-lg sm:text-xl md:text-2xl text-white font-bold mb-4 sm:mb-6">
                         Explore our recent projects and see how we've helped businesses transform their ideas into
                         successful digital products.
                     </p>
-                    <p className="text-lg md:text-xl text-white/70 mb-8">
+                    <p className="text-base sm:text-lg md:text-xl text-white/70 mb-6 sm:mb-8">
                         Each project represents our commitment to innovation, quality, and delivering exceptional user
                         experiences.
                     </p>
                 </div>
 
                 {/* Carousel */}
-                <div className="-mt-24">
+                <div className="-mt-12 sm:-mt-16 lg:-mt-24">
                     <Carousel slides={slideData} />
                 </div>
             </div>

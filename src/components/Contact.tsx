@@ -13,11 +13,40 @@ export const Contact = () => {
         company: "",
         message: ""
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Handle form submission here
-        console.log("Form submitted:", formData);
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                setFormData({
+                    name: "",
+                    email: "",
+                    company: "",
+                    message: ""
+                });
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -47,38 +76,38 @@ export const Contact = () => {
                 ></div>
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4">
-                <div className="text-center mb-16">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-12 sm:mb-16">
                     <div className="mb-6">
-                        <span className="text-sm font-semibold tracking-wider bg-gradient-to-r from-yellow-500 to-amber-500 bg-clip-text text-transparent uppercase">
+                        <span className="text-xs sm:text-sm font-semibold tracking-wider bg-gradient-to-r from-yellow-500 to-amber-500 bg-clip-text text-transparent uppercase">
                             Get In Touch
                         </span>
                     </div>
 
-                    <h2 className={`text-5xl md:text-7xl font-bold text-white mb-8 leading-tight ${playfair.className}`}>
+                    <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight ${playfair.className}`}>
                         Let's build your{" "}
                         <span className="bg-gradient-to-t from-amber-600 via-yellow-400 to-white bg-clip-text text-transparent">
                             next project
                         </span>
                     </h2>
 
-                    <div className="max-w-4xl mx-auto mb-12">
-                        <p className="text-xl md:text-2xl text-white font-bold mb-6">
+                    <div className="max-w-4xl mx-auto mb-8 sm:mb-12">
+                        <p className="text-lg sm:text-xl md:text-2xl text-white font-bold mb-4 sm:mb-6">
                             Ready to transform your idea into an AI-powered MVP? Let's discuss your project requirements.
                         </p>
-                        <p className="text-lg md:text-xl text-white/70 mb-8">
+                        <p className="text-base sm:text-lg md:text-xl text-white/70 mb-6 sm:mb-8">
                             Schedule a consultation or send us a message to get started on your next innovative solution.
                         </p>
                     </div>
                 </div>
 
                 {/* Bento Grid Layout */}
-                <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                     {/* Contact Form - Takes up 2/3 width on large screens */}
-                    <div className="lg:col-span-2 bg-gradient-to-br from-white/5 to-white/2 border border-white/10 rounded-xl p-8">
-                        <h3 className="text-2xl font-bold text-white mb-6">Send us a message</h3>
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            <div className="grid md:grid-cols-2 gap-6">
+                    <div className="lg:col-span-2 bg-gradient-to-br from-white/5 to-white/2 border border-white/10 rounded-xl p-6 sm:p-8">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Send us a message</h3>
+                        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-medium text-white/80 mb-2">
                                         Your Name
@@ -141,10 +170,28 @@ export const Contact = () => {
                             </div>
                             <button
                                 type="submit"
-                                className="w-full px-8 py-4 bg-gradient-to-r from-yellow-500 to-amber-500 text-black font-semibold rounded-lg hover:from-yellow-400 hover:to-amber-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25"
+                                disabled={isSubmitting}
+                                className="w-full px-8 py-4 bg-gradient-to-r from-yellow-500 to-amber-500 text-black font-semibold rounded-lg hover:from-yellow-400 hover:to-amber-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                             >
-                                Send Message
+                                {isSubmitting ? 'Sending...' : 'Send Message'}
                             </button>
+                            
+                            {/* Status Messages */}
+                            {submitStatus === 'success' && (
+                                <div className="mt-4 p-4 bg-green-500/20 border border-green-500/50 rounded-lg">
+                                    <p className="text-green-400 text-sm font-medium">
+                                        Thank you! Your message has been sent successfully. We'll get back to you soon.
+                                    </p>
+                                </div>
+                            )}
+                            
+                            {submitStatus === 'error' && (
+                                <div className="mt-4 p-4 bg-red-500/20 border border-red-500/50 rounded-lg">
+                                    <p className="text-red-400 text-sm font-medium">
+                                        Sorry, there was an error sending your message. Please try again or contact us directly.
+                                    </p>
+                                </div>
+                            )}
                         </form>
                     </div>
 

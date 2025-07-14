@@ -1,15 +1,8 @@
 @import "tailwindcss";
 
-:root {}
-
-@theme inline {}
-
-@media (prefers-color-scheme: dark) {
-    :root {}
-}
-
-body {
-    scroll-behavior: smooth
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
 }
 
 /* Premium Link Hover Animations */

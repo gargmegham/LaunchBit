@@ -42,16 +42,15 @@ const services = [
 export const Services = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
     return (
-        <section id="services" className="relative mb-44 overflow-hidden flex items-center justify-center">
-            {/* Elegant background gradient */}
+        <section id="services" className="relative mb-52 overflow-hidden flex items-center justify-center">
+            {/* Yellow/amber spotlight gradient centered */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/3 via-amber-500/5 to-transparent"></div>
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_black_70%)]"></div>
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-yellow-500/20 via-amber-500/10 to-transparent rounded-full blur-3xl"></div>
             </div>
 
-            {/* Subtle grain texture */}
-            <div className="absolute inset-0 opacity-[0.02] mix-blend-soft-light">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGRlZnM+CjxwYXR0ZXJuIGlkPSJhIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgo8cGF0aCBkPSJNNTQgMEg2djZINTR6TTQ4IDZINTR2NkQ0OHoiIGZpbGw9IiNmZmYiLz4KPC9wYXR0ZXJuPgo8L2RlZnM+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0idXJsKCNhKSIvPgo8L3N2Zz4=')]"></div>
+            {/* White rectangular grid pattern */}
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGRlZnM+CjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgo8cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjEiLz4KPC9wYXR0ZXJuPgo8L2RlZnM+CjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz4KICA8L3N2Zz4=')] opacity-10"></div>
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-8">
@@ -63,7 +62,7 @@ export const Services = () => {
                         className={`text-6xl md:text-7xl font-bold text-white mb-8 leading-tight ${playfair.className}`}
                     >
                         What We{" "}
-                        <span className="bg-gradient-to-b from-yellow-400 via-amber-400 to-yellow-600 bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent">
                             Craft
                         </span>
                     </h2>
@@ -78,7 +77,7 @@ export const Services = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {services.map((service, index) => (
                         <div
                             key={index}
@@ -89,7 +88,7 @@ export const Services = () => {
                             <AnimatePresence>
                                 {hoveredIndex === index && (
                                     <motion.span
-                                        className="absolute inset-0 h-full w-full bg-gradient-to-br from-yellow-500/[0.08] via-amber-500/[0.05] to-yellow-600/[0.08] block rounded-3xl"
+                                        className="absolute inset-0 h-full w-full bg-gradient-to-br from-yellow-500/[0.08] via-amber-500/[0.05] to-yellow-600/[0.08] block rounded-xl"
                                         layoutId="hoverBackground"
                                         initial={{ opacity: 0 }}
                                         animate={{
@@ -104,13 +103,13 @@ export const Services = () => {
                                 )}
                             </AnimatePresence>
 
-                            <div className="relative bg-gradient-to-br from-white/[0.02] to-white/[0.01] backdrop-blur-sm rounded-3xl border border-white/[0.05] group-hover:border-yellow-500/20 transition-all duration-300 p-10 h-full z-20">
+                            <div className="relative bg-gradient-to-br from-white/[0.02] to-white/[0.01] backdrop-blur-sm rounded-xl border border-white/[0.05] group-hover:border-yellow-500/20 transition-all duration-300 p-8 h-full z-20">
                                 <div className="relative z-50">
                                     <div className="mb-8">
-                                        <h3 className="text-3xl font-bold text-white mb-4 group-hover:text-yellow-400/90 transition-colors duration-300">
+                                        <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-yellow-400/90 transition-colors duration-300">
                                             {service.title}
                                         </h3>
-                                        <p className="text-white/70 text-lg leading-relaxed mb-6">
+                                        <p className="text-white/60 text-base leading-relaxed mb-6">
                                             {service.description}
                                         </p>
                                         <div className="text-yellow-400/60 text-sm font-medium tracking-wide">
@@ -118,8 +117,8 @@ export const Services = () => {
                                         </div>
                                     </div>
                                 </div>
-                                {/* Subtle bottom accent */}
-                                <div className="absolute bottom-0 left-10 right-10 h-px bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent"></div>
+                                {/* Bottom accent line */}
+                                <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent"></div>
                             </div>
                         </div>
                     ))}

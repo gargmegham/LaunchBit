@@ -4,10 +4,12 @@ const playfair = Playfair_Display({ subsets: ["latin"] })
 
 export const About = () => {
     return (
-        <section id="about" className="relative mb-44 overflow-hidden flex items-center justify-center">
+        <section id="about" className="relative mb-52 overflow-hidden flex items-center justify-center">
             {/* Background effects */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-yellow-500/10 via-amber-500/5 to-transparent rounded-full blur-3xl"></div>
+                {/* Additional spotlight extending toward services section */}
+                <div className="absolute left-0 bottom-0 w-[800px] h-[400px] bg-gradient-to-br from-yellow-500/8 via-amber-500/4 to-transparent rounded-full blur-3xl"></div>
             </div>
 
             {/* Subtle dots pattern */}

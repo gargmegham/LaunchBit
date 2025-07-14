@@ -1,5 +1,5 @@
-import Link from "next/link"
 import { Playfair_Display } from "next/font/google"
+import Link from "next/link"
 
 const playfair = Playfair_Display({ subsets: ["latin"] })
 
@@ -18,7 +18,7 @@ const brands = [
 
 export const Hero = () => {
     return (
-        <section className="relative bg-black h-screen flex flex-col items-center justify-center overflow-hidden">
+        <section className="relative bg-black h-screen flex flex-col items-center justify-center overflow-hidden snap-start">
             {/* Spotlights */}
             <div className="absolute inset-0 pointer-events-none">
                 {/* Left spotlight - Yellow heavy */}

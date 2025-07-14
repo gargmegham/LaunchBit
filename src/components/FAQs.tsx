@@ -1,75 +1,76 @@
-"use client";
+"use client"
 
-import { Playfair_Display } from "next/font/google";
-import { useState } from "react";
+import { Playfair_Display } from "next/font/google"
 
-const playfair = Playfair_Display({ subsets: ["latin"] });
+import { useState } from "react"
+
+const playfair = Playfair_Display({ subsets: ["latin"] })
 
 interface FAQ {
-    id: number;
-    question: string;
-    answer: string;
+    id: number
+    question: string
+    answer: string
 }
 
 const faqs: FAQ[] = [
     {
         id: 1,
         question: "What is an AI-powered MVP and why do I need one?",
-        answer: "An AI-powered MVP (Minimum Viable Product) is a basic version of your product that incorporates artificial intelligence to solve core problems efficiently. It allows you to test your idea with real users, gather feedback, and iterate quickly while leveraging AI to provide intelligent features like automation, personalization, or predictive analytics."
+        answer: "An AI-powered MVP (Minimum Viable Product) is a basic version of your product that incorporates artificial intelligence to solve core problems efficiently. It allows you to test your idea with real users, gather feedback, and iterate quickly while leveraging AI to provide intelligent features like automation, personalization, or predictive analytics.",
     },
     {
         id: 2,
         question: "How long does it typically take to build an MVP?",
-        answer: "Our typical MVP development timeline is 4-8 weeks, depending on complexity. Simple MVPs with basic AI features can be completed in 4-6 weeks, while more complex solutions requiring custom AI models or integrations may take 6-8 weeks. We provide detailed timelines during our discovery phase."
+        answer: "Our typical MVP development timeline is 4-8 weeks, depending on complexity. Simple MVPs with basic AI features can be completed in 4-6 weeks, while more complex solutions requiring custom AI models or integrations may take 6-8 weeks. We provide detailed timelines during our discovery phase.",
     },
     {
         id: 3,
         question: "What technologies and frameworks do you use?",
-        answer: "We use modern, scalable technologies including React, Next.js, Node.js, Python, FastAPI, Django, and cloud platforms like AWS and Vercel. For AI/ML, we work with OpenAI APIs, TensorFlow, PyTorch, and various AI services. We choose the best tech stack based on your specific requirements."
+        answer: "We use modern, scalable technologies including React, Next.js, Node.js, Python, FastAPI, Django, and cloud platforms like AWS and Vercel. For AI/ML, we work with OpenAI APIs, TensorFlow, PyTorch, and various AI services. We choose the best tech stack based on your specific requirements.",
     },
     {
         id: 4,
         question: "Do you provide ongoing support and maintenance?",
-        answer: "Yes, we offer comprehensive post-launch support including bug fixes, performance optimization, feature updates, and scaling assistance. We provide different support packages ranging from basic maintenance to full ongoing development partnerships."
+        answer: "Yes, we offer comprehensive post-launch support including bug fixes, performance optimization, feature updates, and scaling assistance. We provide different support packages ranging from basic maintenance to full ongoing development partnerships.",
     },
     {
         id: 5,
         question: "What's included in your MVP development service?",
-        answer: "Our MVP service includes: initial consultation and strategy, UI/UX design, full-stack development, AI/ML integration, testing and quality assurance, deployment setup, basic documentation, and 30 days of post-launch support. We also provide analytics setup and performance monitoring."
+        answer: "Our MVP service includes: initial consultation and strategy, UI/UX design, full-stack development, AI/ML integration, testing and quality assurance, deployment setup, basic documentation, and 30 days of post-launch support. We also provide analytics setup and performance monitoring.",
     },
     {
         id: 6,
         question: "How do you ensure the AI features are reliable and accurate?",
-        answer: "We implement robust testing frameworks, use proven AI models and APIs, implement fallback mechanisms, and conduct thorough validation with real data. We also provide monitoring and alerting systems to track AI performance and continuously improve accuracy over time."
+        answer: "We implement robust testing frameworks, use proven AI models and APIs, implement fallback mechanisms, and conduct thorough validation with real data. We also provide monitoring and alerting systems to track AI performance and continuously improve accuracy over time.",
     },
     {
         id: 7,
         question: "What are your pricing models?",
-        answer: "We offer flexible pricing: fixed-price projects for well-defined MVPs (starting at $15k), hourly rates for ongoing development ($75-150/hour), and retainer packages for long-term partnerships. Pricing depends on complexity, timeline, and specific requirements."
+        answer: "We offer flexible pricing: fixed-price projects for well-defined MVPs (starting at $15k), hourly rates for ongoing development ($75-150/hour), and retainer packages for long-term partnerships. Pricing depends on complexity, timeline, and specific requirements.",
     },
     {
         id: 8,
         question: "Can you help scale my MVP after launch?",
-        answer: "Absolutely! We specialize in scaling MVPs to handle growth. This includes performance optimization, infrastructure scaling, feature expansion, team augmentation, and migration to more robust architectures. Many of our clients continue working with us as their technical partner."
+        answer: "Absolutely! We specialize in scaling MVPs to handle growth. This includes performance optimization, infrastructure scaling, feature expansion, team augmentation, and migration to more robust architectures. Many of our clients continue working with us as their technical partner.",
     },
     {
         id: 9,
         question: "Do you work with startups or only established companies?",
-        answer: "We work with both! We have extensive experience with startups (from pre-seed to Series A) and also serve established companies building new products. We understand the unique challenges of each stage and adapt our approach accordingly."
+        answer: "We work with both! We have extensive experience with startups (from pre-seed to Series A) and also serve established companies building new products. We understand the unique challenges of each stage and adapt our approach accordingly.",
     },
     {
         id: 10,
         question: "What makes LaunchBit different from other development agencies?",
-        answer: "We specialize specifically in AI-powered MVPs, have deep expertise in modern AI/ML technologies, focus on rapid iteration and user feedback, provide end-to-end service from idea to launch, and maintain long-term partnerships with our clients. Our team combines technical excellence with business acumen."
-    }
-];
+        answer: "We specialize specifically in AI-powered MVPs, have deep expertise in modern AI/ML technologies, focus on rapid iteration and user feedback, provide end-to-end service from idea to launch, and maintain long-term partnerships with our clients. Our team combines technical excellence with business acumen.",
+    },
+]
 
 export const FAQs = () => {
-    const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+    const [openFAQ, setOpenFAQ] = useState<number | null>(null)
 
     const toggleFAQ = (id: number) => {
-        setOpenFAQ(openFAQ === id ? null : id);
-    };
+        setOpenFAQ(openFAQ === id ? null : id)
+    }
 
     return (
         <section id="faqs" className="relative mb-52 overflow-hidden flex items-center justify-center">
@@ -98,7 +99,9 @@ export const FAQs = () => {
                     </span>
                 </div>
 
-                <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight ${playfair.className}`}>
+                <h2
+                    className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight ${playfair.className}`}
+                >
                     Frequently Asked{" "}
                     <span className="bg-gradient-to-t from-amber-600 via-yellow-400 to-white bg-clip-text text-transparent">
                         Questions
@@ -129,18 +132,30 @@ export const FAQs = () => {
                                     {faq.question}
                                 </span>
                                 <div className="flex-shrink-0">
-                                    <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-yellow-500 to-amber-500 flex items-center justify-center transform transition-transform duration-300 ${openFAQ === faq.id ? 'rotate-45' : ''}`}>
-                                        <svg className="w-3 h-3 sm:w-4 sm:h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                    <div
+                                        className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-yellow-500 to-amber-500 flex items-center justify-center transform transition-transform duration-300 ${openFAQ === faq.id ? "rotate-45" : ""}`}
+                                    >
+                                        <svg
+                                            className="w-3 h-3 sm:w-4 sm:h-4 text-black"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                                            />
                                         </svg>
                                     </div>
                                 </div>
                             </button>
-                            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openFAQ === faq.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                            <div
+                                className={`overflow-hidden transition-all duration-300 ease-in-out ${openFAQ === faq.id ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
+                            >
                                 <div className="px-4 sm:px-6 pb-4 sm:pb-6">
-                                    <p className="text-sm sm:text-base text-white/80 leading-relaxed">
-                                        {faq.answer}
-                                    </p>
+                                    <p className="text-sm sm:text-base text-white/80 leading-relaxed">{faq.answer}</p>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +166,8 @@ export const FAQs = () => {
                 <div className="mt-12 sm:mt-16 p-6 sm:p-8 bg-gradient-to-br from-white/5 to-white/2 border border-white/10 rounded-xl">
                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">Still have questions?</h3>
                     <p className="text-sm sm:text-base text-white/70 mb-4 sm:mb-6">
-                        Can't find the answer you're looking for? Our team is here to help you with any questions about your project.
+                        Can't find the answer you're looking for? Our team is here to help you with any questions about
+                        your project.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                         <a
@@ -173,5 +189,5 @@ export const FAQs = () => {
                 </div>
             </div>
         </section>
-    );
-};
+    )
+}

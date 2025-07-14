@@ -174,7 +174,10 @@ const Carousel = ({ slides }: CarouselProps) => {
     const id = useId()
 
     return (
-        <div className="relative w-[90vmin] sm:w-[80vmin] lg:w-[70vmin] h-[90vmin] sm:h-[80vmin] lg:h-[70vmin] mx-auto" aria-labelledby={`carousel-heading-${id}`}>
+        <div
+            className="relative w-[90vmin] sm:w-[80vmin] lg:w-[70vmin] h-[90vmin] sm:h-[80vmin] lg:h-[70vmin] mx-auto"
+            aria-labelledby={`carousel-heading-${id}`}
+        >
             <ul
                 className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out"
                 style={{
@@ -268,7 +271,9 @@ export const Work = () => {
                     </span>
                 </div>
 
-                <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight ${playfair.className}`}>
+                <h2
+                    className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight ${playfair.className}`}
+                >
                     Portfolio{" "}
                     <span className="bg-gradient-to-t from-amber-600 via-yellow-400 to-white bg-clip-text text-transparent">
                         Showcase

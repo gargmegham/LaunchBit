@@ -45,7 +45,9 @@ export const Hero = () => {
 
             {/* Main Content */}
             <div className="relative z-10 text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 leading-tight ${playfair.className}`}>
+                <h1
+                    className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 leading-tight ${playfair.className}`}
+                >
                     We transform ideas into
                     <span className="block bg-gradient-to-t from-amber-600 via-yellow-400 to-white bg-clip-text text-transparent">
                         AI-powered MVPs
@@ -74,7 +76,9 @@ export const Hero = () => {
 
                 {/* Brand Scroll */}
                 <div className="text-center">
-                    <p className="text-white/60 text-xs sm:text-sm mb-4 sm:mb-6 font-semibold">You're in good company</p>
+                    <p className="text-white/60 text-xs sm:text-sm mb-4 sm:mb-6 font-semibold">
+                        You're in good company
+                    </p>
                     <div className="relative overflow-hidden">
                         <div className="flex animate-scroll whitespace-nowrap gap-4 sm:gap-6 lg:gap-8">
                             {[...brands, ...brands].map((brand, index) => (

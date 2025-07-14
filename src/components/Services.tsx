@@ -4,8 +4,8 @@ import { Playfair_Display } from "next/font/google"
 
 import { useState } from "react"
 
-import { AnimatePresence, motion } from "motion/react"
 import { cn } from "@/lib/utils"
+import { AnimatePresence, motion } from "motion/react"
 
 const playfair = Playfair_Display({ subsets: ["latin"] })
 

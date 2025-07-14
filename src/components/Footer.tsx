@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export const Footer = () => {
     return (
-        <footer className="relative bg-black text-white py-16 mt-20">
+        <footer className="relative bg-black text-white py-16">
             {/* Star background effect */}
             <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative">

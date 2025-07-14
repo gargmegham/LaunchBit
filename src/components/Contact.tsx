@@ -1,60 +1,61 @@
-"use client";
+"use client"
 
-import { Playfair_Display } from "next/font/google";
-import Link from "next/link";
-import { useState } from "react";
+import { Playfair_Display } from "next/font/google"
+import Link from "next/link"
 
-const playfair = Playfair_Display({ subsets: ["latin"] });
+import { useState } from "react"
+
+const playfair = Playfair_Display({ subsets: ["latin"] })
 
 export const Contact = () => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         company: "",
-        message: ""
-    });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+        message: "",
+    })
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
     const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-        setSubmitStatus('idle');
+        e.preventDefault()
+        setIsSubmitting(true)
+        setSubmitStatus("idle")
 
         try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
+            const response = await fetch("/api/contact", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify(formData),
-            });
+            })
 
             if (response.ok) {
-                setSubmitStatus('success');
+                setSubmitStatus("success")
                 setFormData({
                     name: "",
                     email: "",
                     company: "",
-                    message: ""
-                });
+                    message: "",
+                })
             } else {
-                setSubmitStatus('error');
+                setSubmitStatus("error")
             }
         } catch (error) {
-            console.error('Error submitting form:', error);
-            setSubmitStatus('error');
+            console.error("Error submitting form:", error)
+            setSubmitStatus("error")
         } finally {
-            setIsSubmitting(false);
+            setIsSubmitting(false)
         }
-    };
+    }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
+            [e.target.name]: e.target.value,
+        })
+    }
 
     return (
         <section id="contact" className="relative mb-52 overflow-hidden flex items-center justify-center">
@@ -84,7 +85,9 @@ export const Contact = () => {
                         </span>
                     </div>
 
-                    <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight ${playfair.className}`}>
+                    <h2
+                        className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight ${playfair.className}`}
+                    >
                         Let's build your{" "}
                         <span className="bg-gradient-to-t from-amber-600 via-yellow-400 to-white bg-clip-text text-transparent">
                             next project
@@ -93,10 +96,12 @@ export const Contact = () => {
 
                     <div className="max-w-4xl mx-auto mb-8 sm:mb-12">
                         <p className="text-lg sm:text-xl md:text-2xl text-white font-bold mb-4 sm:mb-6">
-                            Ready to transform your idea into an AI-powered MVP? Let's discuss your project requirements.
+                            Ready to transform your idea into an AI-powered MVP? Let's discuss your project
+                            requirements.
                         </p>
                         <p className="text-base sm:text-lg md:text-xl text-white/70 mb-6 sm:mb-8">
-                            Schedule a consultation or send us a message to get started on your next innovative solution.
+                            Schedule a consultation or send us a message to get started on your next innovative
+                            solution.
                         </p>
                     </div>
                 </div>
@@ -173,22 +178,23 @@ export const Contact = () => {
                                 disabled={isSubmitting}
                                 className="w-full px-8 py-4 bg-gradient-to-r from-yellow-500 to-amber-500 text-black font-semibold rounded-lg hover:from-yellow-400 hover:to-amber-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                             >
-                                {isSubmitting ? 'Sending...' : 'Send Message'}
+                                {isSubmitting ? "Sending..." : "Send Message"}
                             </button>
-                            
+
                             {/* Status Messages */}
-                            {submitStatus === 'success' && (
+                            {submitStatus === "success" && (
                                 <div className="mt-4 p-4 bg-green-500/20 border border-green-500/50 rounded-lg">
                                     <p className="text-green-400 text-sm font-medium">
                                         Thank you! Your message has been sent successfully. We'll get back to you soon.
                                     </p>
                                 </div>
                             )}
-                            
-                            {submitStatus === 'error' && (
+
+                            {submitStatus === "error" && (
                                 <div className="mt-4 p-4 bg-red-500/20 border border-red-500/50 rounded-lg">
                                     <p className="text-red-400 text-sm font-medium">
-                                        Sorry, there was an error sending your message. Please try again or contact us directly.
+                                        Sorry, there was an error sending your message. Please try again or contact us
+                                        directly.
                                     </p>
                                 </div>
                             )}
@@ -226,13 +232,17 @@ export const Contact = () => {
                                     </div>
                                     <div>
                                         <p className="text-white font-medium text-sm">Email</p>
-                                        <p className="text-white/60 text-xs">hello@launchbit.in</p>
+                                        <p className="text-white/60 text-xs">hi@launchbit.in</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center">
                                     <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-lg flex items-center justify-center mr-3">
                                         <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                                clipRule="evenodd"
+                                            />
                                         </svg>
                                     </div>
                                     <div>
@@ -243,7 +253,11 @@ export const Contact = () => {
                                 <div className="flex items-center">
                                     <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-lg flex items-center justify-center mr-3">
                                         <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                                clipRule="evenodd"
+                                            />
                                         </svg>
                                     </div>
                                     <div>
@@ -291,5 +305,5 @@ export const Contact = () => {
                 </div>
             </div>
         </section>
-    );
-};
+    )
+}

@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google"
 
 import { getSEOTags } from "@/lib/seo"
 
+import { Navigation } from "@/components/Navigation"
+
 import "@/styles/globals.css"
 
 const geistSans = Geist({
@@ -24,7 +26,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+                <Navigation />
+                {children}
+            </body>
         </html>
     )
 }

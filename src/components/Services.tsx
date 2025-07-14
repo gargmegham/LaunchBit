@@ -5,6 +5,7 @@ import { Playfair_Display } from "next/font/google"
 import { useState } from "react"
 
 import { AnimatePresence, motion } from "motion/react"
+import { cn } from "@/lib/utils"
 
 const playfair = Playfair_Display({ subsets: ["latin"] })
 
@@ -77,18 +78,22 @@ export const Services = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 relative z-10 max-w-7xl mx-auto">
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="group relative block p-2 h-full w-full"
+                            className={cn(
+                                "flex flex-col border-r py-10 relative group/feature border-white/10",
+                                (index === 0 || index === 2) && "border-l border-white/10",
+                                index < 2 && "border-b border-white/10"
+                            )}
                             onMouseEnter={() => setHoveredIndex(index)}
                             onMouseLeave={() => setHoveredIndex(null)}
                         >
                             <AnimatePresence>
                                 {hoveredIndex === index && (
                                     <motion.span
-                                        className="absolute inset-0 h-full w-full bg-gradient-to-br from-yellow-500/[0.08] via-amber-500/[0.05] to-yellow-600/[0.08] block rounded-xl"
+                                        className="absolute inset-0 h-full w-full bg-gradient-to-br from-yellow-500/[0.08] via-amber-500/[0.05] to-yellow-600/[0.08] block"
                                         layoutId="hoverBackground"
                                         initial={{ opacity: 0 }}
                                         animate={{
@@ -103,22 +108,28 @@ export const Services = () => {
                                 )}
                             </AnimatePresence>
 
-                            <div className="relative bg-gradient-to-br from-white/[0.02] to-white/[0.01] backdrop-blur-sm rounded-xl border border-white/[0.05] group-hover:border-yellow-500/20 transition-all duration-300 p-8 h-full z-20">
-                                <div className="relative z-50">
-                                    <div className="mb-8">
-                                        <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-yellow-400/90 transition-colors duration-300">
+                            {index < 2 && (
+                                <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-white/5 to-transparent pointer-events-none" />
+                            )}
+                            {index >= 2 && (
+                                <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
+                            )}
+
+                            <div className="relative z-50 px-10">
+                                <div className="mb-8">
+                                    <div className="text-lg font-bold mb-2 relative z-10">
+                                        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-white/30 group-hover/feature:bg-yellow-500 transition-all duration-200 origin-center" />
+                                        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-white ml-4">
                                             {service.title}
-                                        </h3>
-                                        <p className="text-white/60 text-base leading-relaxed mb-6">
-                                            {service.description}
-                                        </p>
-                                        <div className="text-yellow-400/60 text-sm font-medium tracking-wide">
-                                            {service.detail}
-                                        </div>
+                                        </span>
+                                    </div>
+                                    <p className="text-white/60 text-base leading-relaxed mb-6 ml-4">
+                                        {service.description}
+                                    </p>
+                                    <div className="text-yellow-400/60 text-sm font-medium tracking-wide ml-4">
+                                        {service.detail}
                                     </div>
                                 </div>
-                                {/* Bottom accent line */}
-                                <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent"></div>
                             </div>
                         </div>
                     ))}

@@ -18,7 +18,7 @@ const brands = [
 
 export const Hero = () => {
     return (
-        <section className="relative bg-black h-screen flex flex-col items-center justify-center overflow-hidden snap-start">
+        <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
             {/* Spotlights */}
             <div className="absolute inset-0 pointer-events-none">
                 {/* Left spotlight - Yellow heavy */}

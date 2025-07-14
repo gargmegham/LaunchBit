@@ -1,17 +1,15 @@
 @import "tailwindcss";
 
-:root {
-}
+:root {}
 
-@theme inline {
-}
+@theme inline {}
 
 @media (prefers-color-scheme: dark) {
-    :root {
-    }
+    :root {}
 }
 
 body {
+    scroll-behavior: smooth
 }
 
 /* Premium Link Hover Animations */
@@ -53,6 +51,7 @@ body {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
@@ -67,25 +66,31 @@ body {
     0% {
         transform: translateY(0px) translateX(0px);
     }
+
     25% {
         transform: translateY(-10px) translateX(5px);
     }
+
     50% {
         transform: translateY(0px) translateX(10px);
     }
+
     75% {
         transform: translateY(10px) translateX(5px);
     }
+
     100% {
         transform: translateY(0px) translateX(0px);
     }
 }
 
 @keyframes starBlink {
+
     0%,
     100% {
         opacity: 0.4;
     }
+
     50% {
         opacity: 1;
     }

@@ -46,7 +46,7 @@ export const Hero = () => {
             {/* Main Content */}
             <div className="relative z-10 text-center w-full max-w-4xl lg:max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
                 <h1
-                    className={`text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight ${playfair.className}`}
+                    className={`text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight ${playfair.className}`}
                 >
                     We transform ideas into
                     <span className="block bg-gradient-to-t from-amber-600 via-yellow-400 to-white bg-clip-text text-transparent mt-1">

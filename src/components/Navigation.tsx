@@ -45,7 +45,7 @@ export const Navigation = () => {
                 <Link href="/" className="flex items-center">
                     <Image src="/logo-text.png" width="150" height="10" alt="logo" />
                 </Link>
-                
+
                 {/* Desktop Navigation */}
                 <div className="hidden xl:flex gap-12">
                     {links.map((link) => (
@@ -68,13 +68,16 @@ export const Navigation = () => {
                 </div>
 
                 {/* Mobile Hamburger */}
-                <button
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="xl:hidden flex flex-col gap-1 p-2"
-                >
-                    <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
-                    <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
-                    <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+                <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="xl:hidden flex flex-col gap-1 p-2">
+                    <span
+                        className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-1.5" : ""}`}
+                    />
+                    <span
+                        className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""}`}
+                    />
+                    <span
+                        className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}
+                    />
                 </button>
             </div>
 
@@ -83,8 +86,8 @@ export const Navigation = () => {
                 <div className="xl:hidden absolute top-full left-4 right-4 mt-2 bg-white/5 backdrop-blur-md rounded-xl p-6">
                     <div className="grid grid-cols-2 gap-4 mb-6">
                         {links.map((link) => (
-                            <Link 
-                                key={link.href} 
+                            <Link
+                                key={link.href}
                                 href={link.href}
                                 onClick={() => setIsMenuOpen(false)}
                                 className="card-link-hover bg-white/10 rounded-lg p-4"

@@ -18,17 +18,17 @@ const services = [
         visual: "code",
     },
     {
-        title: "AI Assistants & Automation",
+        title: "Conversational AI Systems",
         description:
-            "Intelligent systems that handle customer interactions, scheduling, and business processes with human-like precision.",
-        detail: "Natural language processing • Computer vision • Voice synthesis",
+            "Custom-built chatbots and voice assistants powered by LLMs, RAG, and robust infrastructure — designed to understand, respond, and act with precision.",
+        detail: "Conversational AI • Retrieval-Augmented Generation • Voice & Chat Interfaces",
         visual: "voice",
     },
     {
-        title: "Workflow Automation",
+        title: "AI-Powered Workflow Automation",
         description:
-            "Streamlined business processes that eliminate manual work and increase operational efficiency across your organization.",
-        detail: "Process optimization • Integration pipelines • Smart routing",
+            "Hands-on discovery of your manual processes, followed by smart automation using AI agents, custom scripts, and integrations that save time and scale efficiency.",
+        detail: "Process Mapping • AI-driven Automation • System Integration",
         visual: "workflow",
     },
     {

@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Premium Link Hover Animations */
+.link-hover {
+    @apply relative transition-all duration-300 ease-out;
+    @apply hover:scale-105 hover:backdrop-blur-sm;
+}
+
+.link-hover::before {
+    @apply absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300;
+    @apply bg-gradient-to-r from-white/5 via-white/10 to-white/5;
+    @apply shadow-lg shadow-white/5;
+    content: "";
+    z-index: -1;
+}
+
+.link-hover:hover::before {
+    @apply opacity-100;
+}
+
+.link-hover:hover {
+    @apply text-white/90 drop-shadow-sm;
+}
+
+/* Premium Card Link Hover */
+.card-link-hover {
+    @apply relative transition-all duration-300 ease-out;
+    @apply border border-transparent;
+}
+
+.card-link-hover:hover {
+    @apply scale-105 backdrop-blur-sm;
+    @apply bg-white/20 shadow-lg shadow-white/10;
+    @apply border-white/20;
+}
+
+/* Custom animations */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-scroll {
+    animation: scroll 20s linear infinite;
+}
+
+/* Star animations */
+@keyframes starMove {
+    0% {
+        transform: translateY(0px) translateX(0px);
+    }
+
+    25% {
+        transform: translateY(-10px) translateX(5px);
+    }
+
+    50% {
+        transform: translateY(0px) translateX(10px);
+    }
+
+    75% {
+        transform: translateY(10px) translateX(5px);
+    }
+
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+}
+
+@keyframes starBlink {
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.animate-star {
+    animation:
+        starMove 8s ease-in-out infinite,
+        starBlink 3s ease-in-out infinite;
+}

@@ -5,6 +5,16 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Prevent horizontal overflow on mobile */
+body, html {
+    overflow-x: hidden;
+}
+
+/* Ensure proper mobile viewport handling */
+* {
+    box-sizing: border-box;
+}
+
 /* Premium Link Hover Animations */
 .link-hover {
     @apply relative transition-all duration-300 ease-out;

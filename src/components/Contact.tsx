@@ -232,7 +232,7 @@ export const Contact = () => {
                                     </div>
                                     <div>
                                         <p className="text-white font-medium text-sm">Email</p>
-                                        <p className="text-white/60 text-xs">hi@launchbit.in</p>
+                                        <p className="text-white/60 text-xs">megham@launchbit.in</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center">

@@ -134,7 +134,7 @@ export default function RefundsAndCancellation() {
                                 <div className="bg-gradient-to-br from-white/5 to-white/2 border border-white/10 rounded-xl p-6">
                                     <h3 className="text-xl font-semibold text-white mb-3">How to Request a Refund</h3>
                                     <ol className="list-decimal list-inside text-white/80 space-y-2">
-                                        <li>Submit a written refund request to hello@launchbit.in</li>
+                                        <li>Submit a written refund request to megham@launchbit.in</li>
                                         <li>
                                             Include project details, reason for refund, and supporting documentation
                                         </li>
@@ -200,7 +200,7 @@ export default function RefundsAndCancellation() {
                             </p>
                             <div className="mt-4 p-4 bg-gradient-to-br from-white/5 to-white/2 border border-white/10 rounded-lg">
                                 <p className="text-white/80">
-                                    Email: hi@launchbit.in
+                                    Email: megham@launchbit.in
                                     <br />
                                     Subject Line: "Refund Request - [Project Name]"
                                     <br />

@@ -159,7 +159,7 @@ export default function TermsOfService() {
                             </p>
                             <div className="mt-4 p-4 bg-gradient-to-br from-white/5 to-white/2 border border-white/10 rounded-lg">
                                 <p className="text-white/80">
-                                    Email: hi@launchbit.in
+                                    Email: megham@launchbit.in
                                     <br />
                                     Website: https://launchbit.in
                                 </p>

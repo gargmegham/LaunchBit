@@ -266,7 +266,7 @@ export default function PrivacyPolicy() {
                             </p>
                             <div className="mt-4 p-4 bg-gradient-to-br from-white/5 to-white/2 border border-white/10 rounded-lg">
                                 <p className="text-white/80">
-                                    Email: privacy@launchbit.in
+                                    Email: support@launchbit.in
                                     <br />
                                     Subject Line: "Privacy Policy Inquiry"
                                     <br />

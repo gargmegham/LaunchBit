@@ -9,10 +9,8 @@ import { useEffect, useState } from "react"
 import { fetchWithNoCache } from "@/lib/api"
 import { FaCopy, FaFacebook, FaLinkedin, FaReddit, FaTwitter, FaWhatsapp } from "react-icons/fa"
 
-import CustomMarkdown from "@/components/custom-markdown"
-import TableOfContents, { CompactTOC } from "@/components/table-of-contents"
-
-import config from "@/constants/config"
+import CustomMarkdown from "@/components/CustomMarkdown"
+import TableOfContents, { CompactTOC } from "@/components/TOC"
 
 export default function BlogPost({ params }) {
     const router = useRouter()
@@ -159,34 +157,34 @@ export default function BlogPost({ params }) {
             "@type": "BlogPosting",
             headline: blog.title,
             description: blog.description,
-            image: blog.thumbnail || `https://${config.domainName}/images/blog-default.jpg`,
+            image: blog.thumbnail || `https://launchbit.in/images/blog-default.jpg`,
             datePublished: blog.created_at,
             dateModified: blog.updated_at || blog.created_at,
             author: {
                 "@type": "Person",
-                name: config.author.name,
-                url: `https://${config.domainName}`,
-                sameAs: [config.socials.twitter, config.socials.linkedin, config.socials.github].filter(Boolean),
+                name: "Megham Garg",
+                url: `https://launchbit.in`,
+                sameAs: ["https://www.linkedin.com/company/launch-bit/"].filter(Boolean),
             },
             publisher: {
                 "@type": "Person",
-                name: config.author.name,
+                name: "Megham Garg",
                 logo: {
                     "@type": "ImageObject",
-                    url: `https://${config.domainName}/images/me.png`,
+                    url: `https://launchbit.in/images/me.png`,
                 },
             },
             mainEntityOfPage: {
                 "@type": "WebPage",
-                "@id": `https://${config.domainName}/blog/${blog.slug}`,
+                "@id": `https://launchbit.in/blog/${blog.slug}`,
             },
             keywords: Array.isArray(blog.tags) ? blog.tags.join(", ") : "",
-            url: `https://${config.domainName}/blog/${blog.slug}`,
+            url: `https://launchbit.in/blog/${blog.slug}`,
             ...(blog.featured && {
                 isPartOf: {
                     "@type": "Blog",
-                    name: `${config.appName} Blog`,
-                    url: `https://${config.domainName}/blogs`,
+                    name: `LaunchBit | Blog`,
+                    url: `https://launchbit.in/blogs`,
                 },
             }),
         }

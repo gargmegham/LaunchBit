@@ -1,7 +1,15 @@
-import type { NextConfig } from "next"
-
-const nextConfig: NextConfig = {
-    devIndicators: false,
+const nextConfig = {
+    images: {
+        domains: ["aceternity.com", "images.unsplash.com", "ylqtkbmwazfavvyfytta.supabase.co"],
+    },
+    reactStrictMode: true,
+    webpack: (config: any, options: any) => {
+        config.module.rules.push({
+            test: /\.(glsl|woff2|glb)/,
+            loader: "raw-loader",
+        })
+        return config
+    },
 }
 
 export default nextConfig

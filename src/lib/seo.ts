@@ -4,7 +4,7 @@ const TITLE = "LaunchBit - The Launchpad for Your Next Big Idea"
 const DESC =
     "At LaunchBit, we empower founders to turn their ideas into reality with our comprehensive suite of services, from product development to marketing and beyond."
 const NAME = "LaunchBit"
-const DOMAIN = "https://launchbit.in/"
+const DOMAIN = "https://launchbit.in"
 
 export const getSEOTags = ({
     title,
@@ -13,9 +13,22 @@ export const getSEOTags = ({
     openGraph,
     canonicalUrlRelative,
     extraTags,
+    twitter,
+    article,
 }: Metadata & {
     canonicalUrlRelative?: string
     extraTags?: Record<string, any>
+    twitter?: {
+        title?: string
+        description?: string
+        images?: string
+    }
+    article?: {
+        publishedTime?: string
+        modifiedTime?: string
+        authors?: string[]
+        tags?: string[]
+    }
 } = {}) => {
     return {
         title: title || TITLE,
@@ -42,14 +55,80 @@ export const getSEOTags = ({
             type: "website",
         },
         twitter: {
-            title: openGraph?.title || TITLE,
-            description: openGraph?.description || DESC,
+            title: twitter?.title || openGraph?.title || TITLE,
+            description: twitter?.description || openGraph?.description || DESC,
             card: "summary_large_image",
             creator: "@garg_megham",
+            ...(twitter?.images && { images: twitter.images }),
         },
         ...(canonicalUrlRelative && {
             alternates: { canonical: canonicalUrlRelative },
         }),
+        ...(article && {
+            article: {
+                publishedTime: article.publishedTime,
+                modifiedTime: article.modifiedTime,
+                authors: article.authors,
+                tags: article.tags,
+            },
+        }),
         ...extraTags,
     }
+}
+
+export const generateBlogListingSEO = () => {
+    return getSEOTags({
+        title: "Blog",
+        description:
+            "Latest insights on startup development, product launches, and entrepreneurship. Expert advice on MVP development, workflow automation, and scaling your business.",
+        canonicalUrlRelative: "/blog",
+        openGraph: {
+            title: "Blog | LaunchBit",
+            description: "Latest insights on startup development, product launches, and entrepreneurship.",
+            type: "website",
+            images: `${DOMAIN}/images/blog-listing.jpg`,
+        },
+    })
+}
+
+export const generateBlogSEO = ({ title, description, slug, tags, publishedAt, updatedAt, thumbnail }: {
+    title: string
+    description: string
+    slug: string
+    tags: string[]
+    publishedAt: string
+    updatedAt?: string
+    thumbnail?: string
+}) => {
+    const seoDescription = description.replace(/[#*`]/g, "").slice(0, 160)
+
+    const seoTitle = title.slice(0, 60)
+
+    return getSEOTags({
+        title: seoTitle,
+        description: seoDescription,
+        keywords: tags,
+        canonicalUrlRelative: `/blog/${slug}`,
+        openGraph: {
+            title: seoTitle,
+            description: seoDescription,
+            type: "article",
+            images: thumbnail || `${DOMAIN}/images/blog-default.jpg`,
+            publishedTime: publishedAt,
+            modifiedTime: updatedAt || publishedAt,
+            authors: ["Megham Garg"],
+            tags: tags,
+        },
+        twitter: {
+            title: seoTitle,
+            description: seoDescription,
+            images: thumbnail || `${DOMAIN}/images/blog-default.jpg`,
+        },
+        article: {
+            publishedTime: publishedAt,
+            modifiedTime: updatedAt || publishedAt,
+            authors: ["Megham Garg"],
+            tags: tags,
+        },
+    })
 }

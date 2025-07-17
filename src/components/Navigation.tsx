@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 import { useState } from "react"
 
@@ -30,6 +31,12 @@ const links = [
 
 export const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const pathname = usePathname()
+
+    if (pathname.startsWith("/admin")) {
+        return null
+    }
 
     return (
         <nav className="fixed top-3 sm:top-6 flex justify-center w-full z-50">

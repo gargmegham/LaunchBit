@@ -143,24 +143,24 @@ export default function BlogListing() {
                     <div className="max-w-[96rem] mx-auto">
                         <div className="text-center mb-20">
                             <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-t from-amber-500 via-amber-300 to-white bg-clip-text text-transparent mb-6">
-                                Blog Posts
+                                Expert Insights
                             </h1>
                             <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed mb-4">
-                                Discover actionable insights, proven strategies, and real-world experiences
-                                <span className="text-amber-400 font-medium"> from the trenches of tech</span>
+                                Learn from our experience in building scalable solutions and implementing
+                                <span className="text-amber-400 font-medium"> cutting-edge technology</span>
                             </p>
                             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
                                 <span className="flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 bg-amber-400 rounded-full"></div>
-                                    Software Development
-                                </span>
-                                <span className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 bg-amber-400 rounded-full"></div>
-                                    Freelancing & Business
+                                    Full Stack Development
                                 </span>
                                 <span className="flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 bg-amber-400 rounded-full"></div>
                                     AI & Automation
+                                </span>
+                                <span className="flex items-center gap-2">
+                                    <div className="w-1.5 h-1.5 bg-amber-400 rounded-full"></div>
+                                    Scalable Infrastructure
                                 </span>
                             </div>
                         </div>
@@ -175,7 +175,7 @@ export default function BlogListing() {
                                         type="text"
                                         value={search}
                                         onChange={(e) => setSearch(e.target.value)}
-                                        placeholder="Search blog posts..."
+                                        placeholder="Search insights and guides..."
                                         className="w-full px-6 py-4 pl-14 bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/20 transition-all duration-300"
                                     />
                                     <svg
@@ -196,7 +196,7 @@ export default function BlogListing() {
 
                             {/* Tags */}
                             <div className="mb-8">
-                                <h3 className="text-lg font-semibold text-white mb-4">Popular Tags</h3>
+                                <h3 className="text-lg font-semibold text-white mb-4">Service Categories</h3>
                                 <div className="flex flex-wrap gap-3">
                                     {tags.map(({ tag, count }) => (
                                         <button

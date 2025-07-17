@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useParams, useRouter } from "next/navigation"
 
 import { useEffect, useState } from "react"
 
@@ -12,7 +12,7 @@ import { FaCopy, FaFacebook, FaLinkedin, FaReddit, FaTwitter, FaWhatsapp } from 
 import CustomMarkdown from "@/components/CustomMarkdown"
 import TableOfContents, { CompactTOC } from "@/components/TOC"
 
-export default function BlogPost({ params }) {
+export default function BlogPost({}) {
     const router = useRouter()
     const [blog, setBlog] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -20,6 +20,7 @@ export default function BlogPost({ params }) {
     const [relatedPosts, setRelatedPosts] = useState([])
     const [subscriberEmail, setSubscriberEmail] = useState("")
     const [searchQuery, setSearchQuery] = useState("")
+    const params = useParams()
 
     useEffect(() => {
         fetchBlog()

@@ -27,6 +27,10 @@ const links = [
         href: "/#faqs",
         label: "FAQs",
     },
+    {
+        href: "/blogs",
+        label: "Blogs",
+    },
 ]
 
 export const Navigation = () => {

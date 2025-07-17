@@ -42,11 +42,11 @@ export default function BlogPost({ params }) {
                 const data = await response.json()
                 setBlog(data)
             } else {
-                router.push("/logs")
+                router.push("/blogs")
             }
         } catch (error) {
             console.error("Failed to fetch blog:", error)
-            router.push("/logs")
+            router.push("/blogs")
         } finally {
             setLoading(false)
         }
@@ -83,7 +83,7 @@ export default function BlogPost({ params }) {
     const handleSearch = (e) => {
         e.preventDefault()
         if (searchQuery.trim()) {
-            router.push(`/logs?search=${encodeURIComponent(searchQuery)}`)
+            router.push(`/blogs?search=${encodeURIComponent(searchQuery)}`)
         }
     }
 
@@ -186,7 +186,7 @@ export default function BlogPost({ params }) {
                 isPartOf: {
                     "@type": "Blog",
                     name: `${config.appName} Blog`,
-                    url: `https://${config.domainName}/logs`,
+                    url: `https://${config.domainName}/blogs`,
                 },
             }),
         }
@@ -238,7 +238,7 @@ export default function BlogPost({ params }) {
                             The blog post you are looking for does not exist or has been removed.
                         </p>
                         <Link
-                            href="/logs"
+                            href="/blogs"
                             className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-black rounded-xl font-medium transition-all duration-300"
                         >
                             ← Back to Blog
@@ -283,12 +283,12 @@ export default function BlogPost({ params }) {
                                 {/* Blog Header */}
                                 <header className="mb-8">
                                     <Link
-                                        href="/logs"
+                                        href="/blogs"
                                         className="text-amber-400 hover:text-amber-300 text-sm mb-4 inline-flex items-center gap-2 transition-all duration-300 group"
                                     >
                                         <span className="transition-transform group-hover:-translate-x-1">←</span>
                                         <span className="relative">
-                                            Back to Blogs
+                                            Back to Insights
                                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
                                         </span>
                                     </Link>
@@ -375,14 +375,14 @@ export default function BlogPost({ params }) {
                             <aside className="xl:w-1/5 lg:w-1/4 space-y-8">
                                 {/* Search */}
                                 <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
-                                    <h3 className="text-lg font-semibold text-white mb-4">Search Posts</h3>
+                                    <h3 className="text-lg font-semibold text-white mb-4">Search Insights</h3>
                                     <form onSubmit={handleSearch}>
                                         <div className="relative">
                                             <input
                                                 type="text"
                                                 value={searchQuery}
                                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                                placeholder="Search blog posts..."
+                                                placeholder="Search insights and guides..."
                                                 className="w-full px-6 py-4 pl-14 bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-amber-400/30 transition-all duration-300"
                                             />
                                             <svg
@@ -404,7 +404,7 @@ export default function BlogPost({ params }) {
 
                                 {/* Recent Posts */}
                                 <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
-                                    <h3 className="text-lg font-semibold text-white mb-4">Recent Posts</h3>
+                                    <h3 className="text-lg font-semibold text-white mb-4">Recent Insights</h3>
                                     <div className="space-y-4">
                                         {recentPosts.map((post) => (
                                             <Link key={post.id} href={`/blog/${post.slug}`} className="block group">
@@ -423,7 +423,7 @@ export default function BlogPost({ params }) {
                                 {/* More Like This */}
                                 {relatedPosts.length > 0 && (
                                     <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
-                                        <h3 className="text-lg font-semibold text-white mb-4">More Like This</h3>
+                                        <h3 className="text-lg font-semibold text-white mb-4">Related Insights</h3>
                                         <div className="space-y-4">
                                             {relatedPosts.map((post) => (
                                                 <Link key={post.id} href={`/blog/${post.slug}`} className="block group">
@@ -444,7 +444,7 @@ export default function BlogPost({ params }) {
                                 <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
                                     <h3 className="text-lg font-semibold text-white mb-4">Subscribe to Newsletter</h3>
                                     <p className="text-sm text-gray-300 mb-4">
-                                        Get the latest posts delivered right to your inbox.
+                                        Get the latest insights and guides delivered right to your inbox.
                                     </p>
                                     <form onSubmit={handleSubscribe}>
                                         <input

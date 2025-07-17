@@ -176,10 +176,10 @@ export default function BlogPost({ params }) {
             },
             mainEntityOfPage: {
                 "@type": "WebPage",
-                "@id": `https://launchbit.in/blog/${blog.slug}`,
+                "@id": `https://launchbit.in/blogs/${blog.slug}`,
             },
             keywords: Array.isArray(blog.tags) ? blog.tags.join(", ") : "",
-            url: `https://launchbit.in/blog/${blog.slug}`,
+            url: `https://launchbit.in/blogs/${blog.slug}`,
             ...(blog.featured && {
                 isPartOf: {
                     "@type": "Blog",
@@ -405,7 +405,7 @@ export default function BlogPost({ params }) {
                                     <h3 className="text-lg font-semibold text-white mb-4">Recent Insights</h3>
                                     <div className="space-y-4">
                                         {recentPosts.map((post) => (
-                                            <Link key={post.id} href={`/blog/${post.slug}`} className="block group">
+                                            <Link key={post.id} href={`/blogs/${post.slug}`} className="block group">
                                                 <h4 className="text-sm text-white group-hover:text-amber-400 transition-colors leading-relaxed relative">
                                                     {post.title}
                                                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-transparent via-amber-500 to-transparent transition-all duration-300 group-hover:w-full"></span>
@@ -424,7 +424,11 @@ export default function BlogPost({ params }) {
                                         <h3 className="text-lg font-semibold text-white mb-4">Related Insights</h3>
                                         <div className="space-y-4">
                                             {relatedPosts.map((post) => (
-                                                <Link key={post.id} href={`/blog/${post.slug}`} className="block group">
+                                                <Link
+                                                    key={post.id}
+                                                    href={`/blogs/${post.slug}`}
+                                                    className="block group"
+                                                >
                                                     <h4 className="text-sm text-white group-hover:text-amber-400 transition-colors leading-relaxed relative">
                                                         {post.title}
                                                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-transparent via-amber-500 to-transparent transition-all duration-300 group-hover:w-full"></span>

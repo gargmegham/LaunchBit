@@ -266,7 +266,7 @@ export default function BlogListing() {
                                 <>
                                     <div className="grid gap-6 md:grid-cols-3 max-w-5xl">
                                         {blogs.map((blog) => (
-                                            <Link href={`/blog/${blog.slug}`} key={blog.id}>
+                                            <Link href={`/blogs/${blog.slug}`} key={blog.id}>
                                                 <article className="group bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 hover:bg-black/60 hover:border-amber-400/30 hover:shadow-2xl hover:shadow-amber-500/10 hover:-translate-y-2 hover:scale-[1.02] cursor-pointer">
                                                     {blog.thumbnail && (
                                                         <div className="relative h-40 overflow-hidden">
@@ -365,7 +365,7 @@ export default function BlogListing() {
                                     {recentPosts.map((post) => (
                                         <Link
                                             key={post.id}
-                                            href={`/blog/${post.slug}`}
+                                            href={`/blogs/${post.slug}`}
                                             className="block group relative"
                                         >
                                             <h4 className="text-sm text-white group-hover:text-amber-400 transition-colors leading-relaxed relative">
@@ -388,7 +388,7 @@ export default function BlogListing() {
                                         {featuredPosts.map((post) => (
                                             <Link
                                                 key={post.id}
-                                                href={`/blog/${post.slug}`}
+                                                href={`/blogs/${post.slug}`}
                                                 className="block group relative"
                                             >
                                                 <h4 className="text-sm text-white group-hover:text-amber-400 transition-colors leading-relaxed relative">

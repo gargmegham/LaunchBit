@@ -91,7 +91,15 @@ export const generateBlogListingSEO = () => {
     })
 }
 
-export const generateBlogSEO = ({ title, description, slug, tags, publishedAt, updatedAt, thumbnail }: {
+export const generateBlogSEO = ({
+    title,
+    description,
+    slug,
+    tags,
+    publishedAt,
+    updatedAt,
+    thumbnail,
+}: {
     title: string
     description: string
     slug: string
@@ -108,7 +116,7 @@ export const generateBlogSEO = ({ title, description, slug, tags, publishedAt, u
         title: seoTitle,
         description: seoDescription,
         keywords: tags,
-        canonicalUrlRelative: `/blog/${slug}`,
+        canonicalUrlRelative: `/blogs/${slug}`,
         openGraph: {
             title: seoTitle,
             description: seoDescription,

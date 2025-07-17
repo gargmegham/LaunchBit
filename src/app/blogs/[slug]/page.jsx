@@ -267,7 +267,7 @@ export default function BlogPost({}) {
                     <div className="max-w-[96rem] mx-auto">
                         <div className="flex flex-col xl:flex-row gap-8 max-w-[100rem] mx-auto">
                             {/* Table of Contents - Desktop */}
-                            <div className="hidden xl:w-1/5 xl:flex xl:flex-col xl:justify-center">
+                            <div className="hidden xl:w-1/5 xl:block">
                                 <TableOfContents
                                     content={blog.content}
                                     sticky={true}

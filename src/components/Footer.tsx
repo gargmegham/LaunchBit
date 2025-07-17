@@ -1,7 +1,16 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export const Footer = () => {
+    const pathname = usePathname()
+
+    if (pathname.startsWith("/blogs") || pathname.startsWith("/admin")) {
+        return null
+    }
+
     return (
         <footer className="relative bg-black text-white py-16">
             {/* Star background effect */}

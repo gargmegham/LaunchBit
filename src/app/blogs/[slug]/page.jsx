@@ -258,7 +258,7 @@ export default function BlogPost({}) {
                 }}
             />
 
-            <div className="min-h-screen bg-black relative overflow-hidden">
+            <div className="bg-black relative overflow-hidden xl:h-screen xl:overflow-y-auto">
                 {/* Background grid pattern */}
                 <div className="absolute inset-0 bg-dot-white/[0.2]" />
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-purple-500/10" />
@@ -267,7 +267,7 @@ export default function BlogPost({}) {
                     <div className="max-w-[96rem] mx-auto">
                         <div className="flex flex-col xl:flex-row gap-8 max-w-[100rem] mx-auto">
                             {/* Table of Contents - Desktop */}
-                            <div className="hidden xl:w-1/5 xl:block">
+                            <div className="hidden w-1/5 xl:flex xl:flex-col">
                                 <TableOfContents
                                     content={blog.content}
                                     sticky={true}
@@ -278,7 +278,7 @@ export default function BlogPost({}) {
                             </div>
 
                             {/* Main Content */}
-                            <article className="xl:w-3/5 lg:w-3/4 xl:overflow-y-auto xl:h-screen">
+                            <article className="xl:w-3/5 lg:w-3/4">
                                 {/* Blog Header */}
                                 <header className="mb-8">
                                     <Link

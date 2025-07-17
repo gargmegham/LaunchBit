@@ -5,3 +5,30 @@
         position: relative;
     }
 }
+
+/* Style scrollbar for main content on xl screens to match theme */
+@media (min-width: 1280px) {
+    .xl\:overflow-y-auto {
+        scrollbar-width: thin; /* Firefox */
+        scrollbar-color: #fbbf24 rgba(0, 0, 0, 0.4); /* Firefox - thumb and track */
+    }
+    
+    .xl\:overflow-y-auto::-webkit-scrollbar {
+        width: 8px; /* WebKit */
+    }
+    
+    .xl\:overflow-y-auto::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.4); /* Track background - matches theme */
+        border-radius: 10px;
+    }
+    
+    .xl\:overflow-y-auto::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #fbbf24, #f59e0b); /* Amber gradient */
+        border-radius: 10px;
+        border: 2px solid rgba(0, 0, 0, 0.4); /* Border matches track */
+    }
+    
+    .xl\:overflow-y-auto::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom, #f59e0b, #d97706); /* Darker amber on hover */
+    }
+}

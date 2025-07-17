@@ -7,13 +7,13 @@ export default function sitemap() {
             priority: 1,
         },
         {
-            url: `https://launchbit.in/logs`,
+            url: `https://launchbit.in/blogs`,
             lastModified: new Date(),
             changeFrequency: "weekly",
             priority: 0.8,
         },
         {
-            url: `https://launchbit.in/blog/sitemap.xml`,
+            url: `https://launchbit.in/blogs/sitemap.xml`,
             lastModified: new Date(),
             changeFrequency: "daily",
             priority: 0.7,

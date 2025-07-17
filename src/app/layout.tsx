@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
+import Script from "next/script"
 
 import { getSEOTags } from "@/lib/seo"
 
@@ -28,7 +29,13 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+                />
+                <Script id="google-script" strategy="afterInteractive">
+                    {`window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${process.env.NEXT_PUBLIC_GA4}');`}
+                </Script>
             </head>
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
                 <Navigation />

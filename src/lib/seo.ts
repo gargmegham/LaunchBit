@@ -53,6 +53,7 @@ export const getSEOTags = ({
             siteName: NAME,
             locale: "en_US",
             type: "website",
+            images: openGraph?.images || `${DOMAIN}/images/blog-default.jpg`,
         },
         twitter: {
             title: twitter?.title || openGraph?.title || TITLE,
@@ -72,6 +73,17 @@ export const getSEOTags = ({
                 tags: article.tags,
             },
         }),
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                "max-video-preview": -1,
+                "max-image-preview": "large",
+                "max-snippet": -1,
+            },
+        },
         ...extraTags,
     }
 }

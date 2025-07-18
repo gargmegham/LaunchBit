@@ -12,7 +12,6 @@ export async function generateMetadata({ slug }) {
         return generateBlogSEO({
             title,
             description: description || `Read ${title} on ${config.appName}`,
-            slug,
             tags: Array.isArray(tags) ? tags : [],
             publishedAt: created_at,
             updatedAt: updated_at,
@@ -25,7 +24,6 @@ export async function generateMetadata({ slug }) {
         return generateBlogSEO({
             title: defaultTitle,
             description: defaultDescription,
-            slug,
             tags: ["AI & Automation", "Full Stack Development", "Scalable Infrastructure"],
             publishedAt: new Date().toISOString(),
         })

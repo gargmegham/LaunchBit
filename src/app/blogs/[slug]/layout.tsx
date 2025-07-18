@@ -1,12 +1,17 @@
-import type { Metadata } from "next"
+import type { Metadata, ResolvingMetadata } from "next"
 
 import { generateBlogSEO } from "@/lib/seo"
 import { getSupabaseServiceClient } from "@/lib/supabase"
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+type Props = {
+    params: { slug: string }
+}
+
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+    const { slug } = params
     try {
         const supabase = getSupabaseServiceClient()
-        const { data: blog, error } = await supabase.from("Blog").select("*").eq("slug", params.slug).single()
+        const { data: blog, error } = await supabase.from("Blog").select("*").eq("slug", slug).single()
         if (error || !blog) {
             throw new Error("Blog post not found")
         }
@@ -14,7 +19,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         return generateBlogSEO({
             title,
             description: description || `Read ${title} on LaunchBit`,
-            slug: params.slug,
+            slug,
             tags: Array.isArray(tags) ? tags : [],
             publishedAt: created_at,
             updatedAt: updated_at,
@@ -27,13 +32,17 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         return generateBlogSEO({
             title: defaultTitle,
             description: defaultDescription,
-            slug: params.slug,
+            slug,
             tags: ["AI & Automation", "Full Stack Development", "Scalable Infrastructure"],
             publishedAt: new Date().toISOString(),
         })
     }
 }
 
-export default function BlogPostLayout({ children }: { children: any }) {
+export default function BlogPostLayout({
+    children,
+}: Readonly<{
+    children: React.ReactNode
+}>) {
     return children
 }

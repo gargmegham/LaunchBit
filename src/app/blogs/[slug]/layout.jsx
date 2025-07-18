@@ -1,6 +1,8 @@
 import { generateBlogSEO } from "@/lib/seo"
 import { getSupabaseServiceClient } from "@/lib/supabase"
 
+import "@/styles/blogs.css"
+
 export async function generateMetadata({ params }) {
     const { slug } = params
     try {

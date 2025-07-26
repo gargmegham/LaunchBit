@@ -79,16 +79,18 @@ export const Hero = () => {
                     <p className="text-white/60 text-xs sm:text-sm mb-3 sm:mb-4 md:mb-6 font-semibold">
                         You're in good company
                     </p>
-                    <div className="relative overflow-hidden w-full">
-                        <div className="flex animate-scroll whitespace-nowrap gap-4 sm:gap-6 lg:gap-8">
-                            {[...brands, ...brands].map((brand, index) => (
-                                <span
-                                    key={index}
-                                    className="text-white/40 font-medium text-xs sm:text-sm lg:text-base xl:text-lg hover:text-white/60 transition-colors flex-shrink-0"
-                                >
-                                    {brand}
-                                </span>
-                            ))}
+                    <div className="flex justify-center">
+                        <div className="relative overflow-hidden max-w-3xl">
+                            <div className="flex animate-scroll whitespace-nowrap gap-4 sm:gap-6 lg:gap-8">
+                                {[...brands, ...brands].map((brand, index) => (
+                                    <span
+                                        key={index}
+                                        className="text-white/40 font-medium text-xs sm:text-sm lg:text-base xl:text-lg hover:text-white/60 transition-colors flex-shrink-0"
+                                    >
+                                        {brand}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

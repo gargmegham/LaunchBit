@@ -72,7 +72,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     const { src, button, title, link } = slide
 
     return (
-        <div className="[perspective:1200px] [transform-style:preserve-3d]">
+        <div className="[perspective:1200px] [transform-style:preserve-3d] w-[90vmin] sm:w-[80vmin] lg:w-[70vmin] h-[90vmin] sm:h-[80vmin] lg:h-[70vmin]">
             <li
                 ref={slideRef}
                 className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[90vmin] sm:w-[80vmin] lg:w-[70vmin] h-[90vmin] sm:h-[80vmin] lg:h-[70vmin] mx-[4vmin] z-10 "
@@ -177,6 +177,7 @@ const Carousel = ({ slides }: CarouselProps) => {
     const handlePointerDown = (e: React.PointerEvent) => {
         dragStartX.current = e.clientX
         isDragging.current = true
+        ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
     }
 
     const handlePointerUp = (e: React.PointerEvent) => {
@@ -187,41 +188,63 @@ const Carousel = ({ slides }: CarouselProps) => {
         else if (delta < -50) handlePreviousClick()
     }
 
-    const handlePointerLeave = () => {
+    const handlePointerCancel = () => {
         isDragging.current = false
     }
 
     const id = useId()
 
+    const wheelAccum = useRef(0)
+    const wheelLocked = useRef(false)
+
+    const handleWheel = (e: React.WheelEvent) => {
+        e.preventDefault()
+        if (wheelLocked.current) return
+        wheelAccum.current += e.deltaX
+        if (wheelAccum.current > 50) {
+            wheelLocked.current = true
+            handleNextClick()
+            setTimeout(() => { wheelAccum.current = 0; wheelLocked.current = false }, 800)
+        } else if (wheelAccum.current < -50) {
+            wheelLocked.current = true
+            handlePreviousClick()
+            setTimeout(() => { wheelAccum.current = 0; wheelLocked.current = false }, 800)
+        }
+    }
+
     return (
         <div
-            className="relative w-[90vmin] sm:w-[80vmin] lg:w-[70vmin] h-[90vmin] sm:h-[80vmin] lg:h-[70vmin] mx-auto"
+            className="relative w-[90vmin] sm:w-[80vmin] lg:w-[70vmin] mx-auto"
             aria-labelledby={`carousel-heading-${id}`}
         >
-            <ul
-                className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out touch-none select-none"
+            <div
+                className="relative w-full h-[90vmin] sm:h-[80vmin] lg:h-[70vmin]"
+                onWheel={handleWheel}
                 onPointerDown={handlePointerDown}
                 onPointerUp={handlePointerUp}
-                onPointerLeave={handlePointerLeave}
-                style={{
-                    transform: `translateX(-${current * (100 / slides.length)}%)`,
-                    cursor: "grab",
-                }}
+                onPointerCancel={handlePointerCancel}
+                style={{ cursor: "grab" }}
             >
-                {slides.map((slide, index) => (
-                    <Slide
-                        key={index}
-                        slide={slide}
-                        index={index}
-                        current={current}
-                        handleSlideClick={handleSlideClick}
-                    />
-                ))}
-            </ul>
+                <ul
+                    className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out select-none"
+                    style={{
+                        transform: `translateX(-${current * (100 / slides.length)}%)`,
+                    }}
+                >
+                    {slides.map((slide, index) => (
+                        <Slide
+                            key={index}
+                            slide={slide}
+                            index={index}
+                            current={current}
+                            handleSlideClick={handleSlideClick}
+                        />
+                    ))}
+                </ul>
+            </div>
 
-            <div className="absolute flex justify-center w-full top-[calc(100%+1rem)]">
+            <div className="flex justify-center w-full mt-4">
                 <CarouselControl type="previous" title="Go to previous slide" handleClick={handlePreviousClick} />
-
                 <CarouselControl type="next" title="Go to next slide" handleClick={handleNextClick} />
             </div>
         </div>
@@ -235,6 +258,36 @@ export const Work = () => {
             button: "Visit",
             src: "/work/fortifydata.png",
             link: "https://fortifydata.com",
+        },
+        {
+            title: "FindGrant",
+            button: "Visit",
+            src: "/work/findgrant.png",
+            link: "https://findgrant.ai",
+        },
+        {
+            title: "PubTrawlr",
+            button: "Visit",
+            src: "/work/pubtrawlr.png",
+            link: "https://thisweekinpublichealth.com",
+        },
+        {
+            title: "AlphaTechPet",
+            button: "Visit",
+            src: "/work/atp.png",
+            link: "https://alphatechpet.com",
+        },
+        {
+            title: "We In The World",
+            button: "Visit",
+            src: "/work/weintheworld.png",
+            link: "https://weintheworld.org",
+        },
+        {
+            title: "World Animal Protection",
+            button: "Visit",
+            src: "/work/wap.png",
+            link: "https://www.worldanimalprotection.org",
         },
         {
             title: "Jotlify",

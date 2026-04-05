@@ -260,6 +260,18 @@ export const Work = () => {
             link: "https://fortifydata.com",
         },
         {
+            title: "FindGrant",
+            button: "Visit",
+            src: "/work/findgrant.png",
+            link: "https://findgrant.ai",
+        },
+        {
+            title: "PubTrawlr",
+            button: "Visit",
+            src: "/work/pubtrawlr.png",
+            link: "https://thisweekinpublichealth.com",
+        },
+        {
             title: "Jotlify",
             button: "Visit",
             src: "/work/jotlify.png",

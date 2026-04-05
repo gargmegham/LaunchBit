@@ -155,6 +155,9 @@ interface CarouselProps {
 const Carousel = ({ slides }: CarouselProps) => {
     const [current, setCurrent] = useState(2)
 
+    const dragStartX = useRef<number>(0)
+    const isDragging = useRef(false)
+
     const handlePreviousClick = () => {
         const previous = current - 1
         setCurrent(previous < 0 ? slides.length - 1 : previous)
@@ -171,6 +174,23 @@ const Carousel = ({ slides }: CarouselProps) => {
         }
     }
 
+    const handlePointerDown = (e: React.PointerEvent) => {
+        dragStartX.current = e.clientX
+        isDragging.current = true
+    }
+
+    const handlePointerUp = (e: React.PointerEvent) => {
+        if (!isDragging.current) return
+        isDragging.current = false
+        const delta = dragStartX.current - e.clientX
+        if (delta > 50) handleNextClick()
+        else if (delta < -50) handlePreviousClick()
+    }
+
+    const handlePointerLeave = () => {
+        isDragging.current = false
+    }
+
     const id = useId()
 
     return (
@@ -179,9 +199,13 @@ const Carousel = ({ slides }: CarouselProps) => {
             aria-labelledby={`carousel-heading-${id}`}
         >
             <ul
-                className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out"
+                className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out touch-none select-none"
+                onPointerDown={handlePointerDown}
+                onPointerUp={handlePointerUp}
+                onPointerLeave={handlePointerLeave}
                 style={{
                     transform: `translateX(-${current * (100 / slides.length)}%)`,
+                    cursor: "grab",
                 }}
             >
                 {slides.map((slide, index) => (

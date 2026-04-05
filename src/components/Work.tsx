@@ -195,18 +195,21 @@ const Carousel = ({ slides }: CarouselProps) => {
     const id = useId()
 
     const wheelAccum = useRef(0)
-    const wheelTimer = useRef<ReturnType<typeof setTimeout>>(null)
+    const wheelLocked = useRef(false)
 
     const handleWheel = (e: React.WheelEvent) => {
         e.preventDefault()
+        if (wheelLocked.current) return
         wheelAccum.current += e.deltaX
-
-        if (wheelTimer.current) clearTimeout(wheelTimer.current)
-        wheelTimer.current = setTimeout(() => {
-            if (wheelAccum.current > 50) handleNextClick()
-            else if (wheelAccum.current < -50) handlePreviousClick()
-            wheelAccum.current = 0
-        }, 50)
+        if (wheelAccum.current > 50) {
+            wheelLocked.current = true
+            handleNextClick()
+            setTimeout(() => { wheelAccum.current = 0; wheelLocked.current = false }, 800)
+        } else if (wheelAccum.current < -50) {
+            wheelLocked.current = true
+            handlePreviousClick()
+            setTimeout(() => { wheelAccum.current = 0; wheelLocked.current = false }, 800)
+        }
     }
 
     return (

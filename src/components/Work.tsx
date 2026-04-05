@@ -272,6 +272,24 @@ export const Work = () => {
             link: "https://thisweekinpublichealth.com",
         },
         {
+            title: "AlphaTechPet",
+            button: "Visit",
+            src: "/work/atp.png",
+            link: "https://alphatechpet.com",
+        },
+        {
+            title: "We In The World",
+            button: "Visit",
+            src: "/work/weintheworld.png",
+            link: "https://weintheworld.org",
+        },
+        {
+            title: "World Animal Protection",
+            button: "Visit",
+            src: "/work/wap.png",
+            link: "https://www.worldanimalprotection.org",
+        },
+        {
             title: "Jotlify",
             button: "Visit",
             src: "/work/jotlify.png",

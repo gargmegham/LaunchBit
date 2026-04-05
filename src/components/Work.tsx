@@ -194,35 +194,54 @@ const Carousel = ({ slides }: CarouselProps) => {
 
     const id = useId()
 
+    const wheelAccum = useRef(0)
+    const wheelTimer = useRef<ReturnType<typeof setTimeout>>(null)
+
+    const handleWheel = (e: React.WheelEvent) => {
+        e.preventDefault()
+        wheelAccum.current += e.deltaX
+
+        if (wheelTimer.current) clearTimeout(wheelTimer.current)
+        wheelTimer.current = setTimeout(() => {
+            if (wheelAccum.current > 50) handleNextClick()
+            else if (wheelAccum.current < -50) handlePreviousClick()
+            wheelAccum.current = 0
+        }, 50)
+    }
+
     return (
         <div
-            className="relative w-[90vmin] sm:w-[80vmin] lg:w-[70vmin] h-[90vmin] sm:h-[80vmin] lg:h-[70vmin] mx-auto"
+            className="relative w-[90vmin] sm:w-[80vmin] lg:w-[70vmin] mx-auto"
             aria-labelledby={`carousel-heading-${id}`}
         >
-            <ul
-                className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out select-none"
+            <div
+                className="relative w-full h-[90vmin] sm:h-[80vmin] lg:h-[70vmin]"
+                onWheel={handleWheel}
                 onPointerDown={handlePointerDown}
                 onPointerUp={handlePointerUp}
                 onPointerCancel={handlePointerCancel}
-                style={{
-                    transform: `translateX(-${current * (100 / slides.length)}%)`,
-                    cursor: "grab",
-                }}
+                style={{ cursor: "grab" }}
             >
-                {slides.map((slide, index) => (
-                    <Slide
-                        key={index}
-                        slide={slide}
-                        index={index}
-                        current={current}
-                        handleSlideClick={handleSlideClick}
-                    />
-                ))}
-            </ul>
+                <ul
+                    className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out select-none"
+                    style={{
+                        transform: `translateX(-${current * (100 / slides.length)}%)`,
+                    }}
+                >
+                    {slides.map((slide, index) => (
+                        <Slide
+                            key={index}
+                            slide={slide}
+                            index={index}
+                            current={current}
+                            handleSlideClick={handleSlideClick}
+                        />
+                    ))}
+                </ul>
+            </div>
 
-            <div className="absolute flex justify-center w-full top-[calc(100%+1rem)]">
+            <div className="flex justify-center w-full mt-4">
                 <CarouselControl type="previous" title="Go to previous slide" handleClick={handlePreviousClick} />
-
                 <CarouselControl type="next" title="Go to next slide" handleClick={handleNextClick} />
             </div>
         </div>

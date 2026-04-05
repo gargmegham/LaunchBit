@@ -72,7 +72,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     const { src, button, title, link } = slide
 
     return (
-        <div className="[perspective:1200px] [transform-style:preserve-3d]">
+        <div className="[perspective:1200px] [transform-style:preserve-3d] w-[90vmin] sm:w-[80vmin] lg:w-[70vmin] h-[90vmin] sm:h-[80vmin] lg:h-[70vmin]">
             <li
                 ref={slideRef}
                 className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[90vmin] sm:w-[80vmin] lg:w-[70vmin] h-[90vmin] sm:h-[80vmin] lg:h-[70vmin] mx-[4vmin] z-10 "
@@ -177,6 +177,7 @@ const Carousel = ({ slides }: CarouselProps) => {
     const handlePointerDown = (e: React.PointerEvent) => {
         dragStartX.current = e.clientX
         isDragging.current = true
+        ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
     }
 
     const handlePointerUp = (e: React.PointerEvent) => {
@@ -187,7 +188,7 @@ const Carousel = ({ slides }: CarouselProps) => {
         else if (delta < -50) handlePreviousClick()
     }
 
-    const handlePointerLeave = () => {
+    const handlePointerCancel = () => {
         isDragging.current = false
     }
 
@@ -199,10 +200,10 @@ const Carousel = ({ slides }: CarouselProps) => {
             aria-labelledby={`carousel-heading-${id}`}
         >
             <ul
-                className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out touch-none select-none"
+                className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out select-none"
                 onPointerDown={handlePointerDown}
                 onPointerUp={handlePointerUp}
-                onPointerLeave={handlePointerLeave}
+                onPointerCancel={handlePointerCancel}
                 style={{
                     transform: `translateX(-${current * (100 / slides.length)}%)`,
                     cursor: "grab",

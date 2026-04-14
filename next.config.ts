@@ -1,6 +1,6 @@
 const nextConfig = {
     images: {
-        domains: ["aceternity.com", "images.unsplash.com", "ylqtkbmwazfavvyfytta.supabase.co"],
+        domains: ["aceternity.com", "images.unsplash.com", "kuycdtiafxwvspnedqmr.supabase.co"],
     },
     reactStrictMode: true,
     webpack: (config: any, options: any) => {

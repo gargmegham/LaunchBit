@@ -140,31 +140,6 @@ export default function BlogListing() {
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-purple-500/10" />
 
                 <main className="relative z-10 px-6 md:px-12 lg:px-24 py-36">
-                    <div className="max-w-[96rem] mx-auto">
-                        <div className="text-center mb-20">
-                            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-t from-amber-500 via-amber-300 to-white bg-clip-text text-transparent mb-6">
-                                Expert Insights
-                            </h1>
-                            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed mb-4">
-                                Learn from our experience in building scalable solutions and implementing
-                                <span className="text-amber-400 font-medium"> cutting-edge technology</span>
-                            </p>
-                            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-                                <span className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 bg-amber-400 rounded-full"></div>
-                                    Full Stack Development
-                                </span>
-                                <span className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 bg-amber-400 rounded-full"></div>
-                                    AI & Automation
-                                </span>
-                                <span className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 bg-amber-400 rounded-full"></div>
-                                    Scalable Infrastructure
-                                </span>
-                            </div>
-                        </div>
-                    </div>
                     <div className="flex flex-col lg:flex-row gap-8 max-w-[100rem] mx-auto">
                         {/* Main Content */}
                         <div className="lg:w-3/4">
@@ -217,45 +192,27 @@ export default function BlogListing() {
                             {/* Blog Posts */}
                             {loading ? (
                                 <div className="text-center py-16">
-                                    <div className="relative mb-8">
-                                        <div className="flex justify-center items-center gap-3 mb-6">
-                                            <div className="w-3 h-3 bg-gradient-to-t from-amber-500 to-amber-300 rounded-full animate-bounce"></div>
-                                            <div
-                                                className="w-3 h-3 bg-gradient-to-t from-amber-400 to-amber-200 rounded-full animate-bounce"
-                                                style={{ animationDelay: "0.1s" }}
-                                            ></div>
-                                            <div
-                                                className="w-3 h-3 bg-gradient-to-t from-amber-500 to-amber-300 rounded-full animate-bounce"
-                                                style={{ animationDelay: "0.2s" }}
-                                            ></div>
-                                        </div>
-                                        <h3 className="text-xl font-semibold bg-gradient-to-t from-amber-400 via-amber-300 to-white bg-clip-text text-transparent mb-3">
-                                            Loading Posts
-                                        </h3>
-                                        <p className="text-gray-400 text-sm">Fetching the latest insights for you...</p>
-                                    </div>
-
                                     {/* Loading skeleton cards */}
                                     <div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
                                         {[1, 2, 3, 4].map((index) => (
                                             <div
                                                 key={index}
-                                                className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden animate-pulse"
+                                                className="bg-black/40 backdrop-blur-xl border border-white/40 rounded-3xl overflow-hidden animate-pulse"
                                             >
-                                                <div className="h-40 bg-gradient-to-r from-white/5 via-amber-400/10 to-white/5"></div>
+                                                <div className="h-40 bg-gradient-to-r from-white/50 via-amber-400/40 to-white/50"></div>
                                                 <div className="p-6">
                                                     <div className="flex gap-2 mb-4">
-                                                        <div className="w-12 h-4 bg-amber-400/20 rounded-full"></div>
-                                                        <div className="w-16 h-4 bg-amber-400/20 rounded-full"></div>
+                                                        <div className="w-12 h-4 bg-amber-400/40 rounded-full"></div>
+                                                        <div className="w-16 h-4 bg-amber-400/40 rounded-full"></div>
                                                     </div>
-                                                    <div className="w-4/5 h-6 bg-white/10 rounded mb-4"></div>
+                                                    <div className="w-4/50 h-6 bg-white/40 rounded mb-4"></div>
                                                     <div className="space-y-2 mb-4">
-                                                        <div className="w-full h-3 bg-white/5 rounded"></div>
-                                                        <div className="w-3/4 h-3 bg-white/5 rounded"></div>
+                                                        <div className="w-full h-3 bg-white/50 rounded"></div>
+                                                        <div className="w-3/4 h-3 bg-white/50 rounded"></div>
                                                     </div>
                                                     <div className="flex justify-between items-center">
-                                                        <div className="w-20 h-3 bg-white/5 rounded"></div>
-                                                        <div className="w-16 h-4 bg-amber-400/20 rounded"></div>
+                                                        <div className="w-20 h-3 bg-white/50 rounded"></div>
+                                                        <div className="w-16 h-4 bg-amber-400/40 rounded"></div>
                                                     </div>
                                                 </div>
                                             </div>

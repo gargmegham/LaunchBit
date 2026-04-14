@@ -126,16 +126,6 @@ export const Footer = () => {
                                     YouTube
                                 </Link>
                             </li>
-                            <li>
-                                <Link
-                                    href="https://x.com/garg_megham"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-white/80 hover:text-yellow-400 transition-colors duration-200"
-                                >
-                                    X/Twitter
-                                </Link>
-                            </li>
                         </ul>
                     </div>
 

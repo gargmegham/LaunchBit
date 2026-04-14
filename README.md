@@ -238,7 +238,6 @@ Please report security vulnerabilities to meghamgarg@gmail.com. See our [Securit
 ## 📞 Support
 
 - **Email**: meghamgarg@gmail.com
-- **Twitter**: [@garg_megham](https://twitter.com/garg_megham)
 - **Website**: [https://launchbit.in](https://launchbit.in)
 
 ---

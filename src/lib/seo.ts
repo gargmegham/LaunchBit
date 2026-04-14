@@ -59,7 +59,6 @@ export const getSEOTags = ({
             title: twitter?.title || openGraph?.title || TITLE,
             description: twitter?.description || openGraph?.description || DESC,
             card: "summary_large_image",
-            creator: "@garg_megham",
             ...(twitter?.images && { images: twitter.images }),
         },
         ...(canonicalUrlRelative && {

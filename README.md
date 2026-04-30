@@ -22,6 +22,7 @@ LaunchBit is a comprehensive platform that empowers founders to transform their 
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **Next.js 15.3.5** - React framework for production
 - **TypeScript 5.0** - Type-safe JavaScript
 - **Tailwind CSS 4.0** - Utility-first CSS framework
@@ -29,15 +30,18 @@ LaunchBit is a comprehensive platform that empowers founders to transform their 
 - **Clsx** - Utility for constructing className strings
 
 ### Backend & APIs
+
 - **Next.js API Routes** - Built-in API functionality
 - **Resend** - Email service for contact forms
 
 ### Development Tools
+
 - **Prettier** - Code formatting with import sorting
 - **ESLint** - Code linting and quality checks
 - **PostCSS** - CSS post-processor
 
 ### Fonts & Icons
+
 - **Geist Sans & Mono** - Modern font family
 - **Playfair Display** - Elegant serif font for headings
 - **Tabler Icons** - Beautiful icon library
@@ -53,8 +57,6 @@ LaunchBit.in/
 │   ├── logo.png
 │   ├── meta_image.png
 │   └── work/              # Portfolio images
-├── scripts/
-│   └── import-blogs-from-supabase.mjs # One-time blog migration helper
 ├── src/
 │   ├── app/               # Next.js app directory
 │   │   ├── api/          # API routes
@@ -93,30 +95,35 @@ LaunchBit.in/
 ### Installation
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/gargmegham/LaunchBit.git
-   cd LaunchBit.in
-   ```
+
+    ```bash
+    git clone https://github.com/gargmegham/LaunchBit.git
+    cd LaunchBit.in
+    ```
 
 2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+
+    ```bash
+    npm install
+    ```
 
 3. **Set up environment variables**
-   ```bash
-   cp env-example .env.local
-   ```
-   
-   Edit `.env.local` and add your configuration:
-   ```
-   RESEND_API_KEY=your_resend_api_key_here
-   ```
+
+    ```bash
+    cp env-example .env.local
+    ```
+
+    Edit `.env.local` and add your configuration:
+
+    ```
+    RESEND_API_KEY=your_resend_api_key_here
+    ```
 
 4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
+
+    ```bash
+    npm run dev
+    ```
 
 5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
@@ -127,7 +134,6 @@ LaunchBit.in/
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
-- `npm run import:blogs -- --dry-run` - Preview Supabase blog import into markdown files
 
 ## 📝 Blog Content Workflow
 
@@ -140,8 +146,8 @@ slug: "my-post-title"
 description: "Short summary for listing and SEO"
 thumbnail: "/images/my-thumbnail.png"
 tags:
-  - "AI & Automation"
-  - "Full Stack Development"
+    - "AI & Automation"
+    - "Full Stack Development"
 featured: false
 draft: false
 created_at: "2026-04-30T00:00:00.000Z"
@@ -149,36 +155,29 @@ updated_at: "2026-04-30T00:00:00.000Z"
 ---
 
 # Post Heading
+
 Post markdown content...
 ```
 
 Store thumbnails in `public/` (for example `public/images/my-thumbnail.png`) and reference them with site-relative paths like `/images/my-thumbnail.png`.
 
-### One-Time Supabase Blog Import
-
-If you need to migrate old `Blog` rows from Supabase into markdown files:
-
-```bash
-npm run import:blogs -- --dry-run
-npm run import:blogs -- --overwrite
-```
-
-The import script reads `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` from `.env.local` or `.env`.
-
 ## 🎨 Design System
 
 ### Color Palette
+
 - **Primary**: Yellow to Amber gradient (`from-yellow-500 to-amber-500`)
 - **Background**: Black (`bg-black`)
 - **Text**: White with opacity variations
 - **Accents**: White with transparency for borders and highlights
 
 ### Typography
+
 - **Headers**: Playfair Display (serif)
 - **Body**: Geist Sans (sans-serif)
 - **Code**: Geist Mono (monospace)
 
 ### Components
+
 - Responsive design with mobile-first approach
 - Smooth animations and transitions
 - Glassmorphism effects with backdrop blur
@@ -187,6 +186,7 @@ The import script reads `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KE
 ## 🌟 Key Features Breakdown
 
 ### Hero Section
+
 - Dynamic animated starfield background
 - Gradient spotlight effects
 - Responsive typography scaling
@@ -194,16 +194,19 @@ The import script reads `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KE
 - Call-to-action buttons
 
 ### Services Section
+
 - Comprehensive service offerings
 - Interactive service cards
 - Detailed descriptions of technical capabilities
 
 ### Portfolio Section
+
 - Showcase of past work and client projects
 - Visual portfolio gallery
 - Client testimonials and reviews
 
 ### Contact System
+
 - Integrated contact form
 - Email service integration with Resend
 - Calendly integration for scheduling calls
@@ -220,13 +223,16 @@ The contact form uses Resend for email delivery. To set up:
 ## 🔧 Configuration
 
 ### SEO Configuration
+
 SEO settings are centralized in `src/lib/seo.ts`:
+
 - Meta tags and Open Graph data
 - Twitter Card configuration
 - Structured data for search engines
 - Canonical URLs
 
 ### Next.js Configuration
+
 - Development indicators disabled
 - TypeScript strict mode enabled
 - Path aliases configured (`@/*` → `./src/*`)
@@ -234,11 +240,13 @@ SEO settings are centralized in `src/lib/seo.ts`:
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
+
 1. Connect your GitHub repository to Vercel
 2. Configure environment variables in Vercel dashboard
 3. Deploy automatically on push to main branch
 
 ### Other Platforms
+
 1. Build the project: `npm run build`
 2. Start the production server: `npm run start`
 3. Configure your hosting platform to serve the application
@@ -248,6 +256,7 @@ SEO settings are centralized in `src/lib/seo.ts`:
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
 ### Development Process
+
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
@@ -256,6 +265,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 6. Submit a pull request
 
 ### Code Style
+
 - Follow existing code style and conventions
 - Use TypeScript for type safety
 - Keep components focused and reusable

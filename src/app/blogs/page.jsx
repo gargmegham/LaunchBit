@@ -179,7 +179,7 @@ export default function BlogListing() {
 
                             {/* Blog Posts */}
                             {loading ? (
-                                <div className="text-center py-16">
+                                <div className="text-center">
                                     {/* Loading skeleton cards */}
                                     <div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
                                         {[1, 2, 3, 4].map((index) => (

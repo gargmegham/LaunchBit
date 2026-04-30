@@ -46,11 +46,15 @@ LaunchBit is a comprehensive platform that empowers founders to transform their 
 
 ```
 LaunchBit.in/
+├── content/
+│   └── blogs/             # Blog posts as Markdown with frontmatter
 ├── public/                 # Static assets
 │   ├── favicon.ico
 │   ├── logo.png
 │   ├── meta_image.png
 │   └── work/              # Portfolio images
+├── scripts/
+│   └── import-blogs-from-supabase.mjs # One-time blog migration helper
 ├── src/
 │   ├── app/               # Next.js app directory
 │   │   ├── api/          # API routes
@@ -123,6 +127,43 @@ LaunchBit.in/
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
+- `npm run import:blogs -- --dry-run` - Preview Supabase blog import into markdown files
+
+## 📝 Blog Content Workflow
+
+Blog posts live in `content/blogs/*.md` with frontmatter metadata and markdown body content.
+
+```md
+---
+title: "My Post Title"
+slug: "my-post-title"
+description: "Short summary for listing and SEO"
+thumbnail: "/images/my-thumbnail.png"
+tags:
+  - "AI & Automation"
+  - "Full Stack Development"
+featured: false
+draft: false
+created_at: "2026-04-30T00:00:00.000Z"
+updated_at: "2026-04-30T00:00:00.000Z"
+---
+
+# Post Heading
+Post markdown content...
+```
+
+Store thumbnails in `public/` (for example `public/images/my-thumbnail.png`) and reference them with site-relative paths like `/images/my-thumbnail.png`.
+
+### One-Time Supabase Blog Import
+
+If you need to migrate old `Blog` rows from Supabase into markdown files:
+
+```bash
+npm run import:blogs -- --dry-run
+npm run import:blogs -- --overwrite
+```
+
+The import script reads `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` from `.env.local` or `.env`.
 
 ## 🎨 Design System
 

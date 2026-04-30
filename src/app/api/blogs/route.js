@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 
-import { getSupabaseServiceClient } from "@/lib/supabase"
+import { queryBlogs } from "@/lib/blogs"
 
 export const revalidate = 0
 export async function GET(request) {
@@ -12,46 +12,15 @@ export async function GET(request) {
         const tag = searchParams.get("tag") || ""
         const featured = searchParams.get("featured") === "true"
 
-        const supabase = getSupabaseServiceClient()
-
-        let query = supabase
-            .from("Blog")
-            .select("id, title, slug, description, thumbnail, tags, featured, created_at", { count: "exact" })
-            .eq("draft", false)
-
-        // Apply filters
-        if (search) {
-            query = query.ilike("title", `%${search}%`)
-        }
-
-        if (tag) {
-            query = query.contains("tags", [tag])
-        }
-
-        if (featured) {
-            query = query.eq("featured", true)
-        }
-
-        // Apply pagination
-        const from = (page - 1) * limit
-        const to = from + limit - 1
-
-        query = query.order("created_at", { ascending: false }).range(from, to)
-
-        const { data: blogs, error, count } = await query
-
-        if (error) {
-            const response = NextResponse.json({ error: error.message }, { status: 500 })
-
-            return response
-        }
-
-        const response = NextResponse.json({
-            blogs,
-            total: count,
-            page,
-            totalPages: Math.ceil(count / limit),
-        })
+        const response = NextResponse.json(
+            queryBlogs({
+                page,
+                limit,
+                search,
+                tag,
+                featured,
+            })
+        )
 
         return response
     } catch (error) {

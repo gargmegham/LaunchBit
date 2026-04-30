@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
     `
 
         await resend.emails.send({
-            from: "LaunchBit Contact <launchbit@meghamgarg.com>",
+            from: "LaunchBit <launchbit@meghamgarg.com>",
             to: ["meghamgarg@gmail.com"],
             subject: `New Contact Form Submission from ${name}`,
             html: emailContent,

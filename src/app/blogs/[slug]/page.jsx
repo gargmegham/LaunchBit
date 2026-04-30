@@ -18,7 +18,6 @@ export default function BlogPost({}) {
     const [loading, setLoading] = useState(true)
     const [recentPosts, setRecentPosts] = useState([])
     const [relatedPosts, setRelatedPosts] = useState([])
-    const [subscriberEmail, setSubscriberEmail] = useState("")
     const [searchQuery, setSearchQuery] = useState("")
     const params = useParams()
 
@@ -83,26 +82,6 @@ export default function BlogPost({}) {
         e.preventDefault()
         if (searchQuery.trim()) {
             router.push(`/blogs?search=${encodeURIComponent(searchQuery)}`)
-        }
-    }
-
-    const handleSubscribe = async (e) => {
-        e.preventDefault()
-        try {
-            const response = await fetchWithNoCache("/api/subscribe", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email: subscriberEmail }),
-            })
-
-            if (response.ok) {
-                setSubscriberEmail("")
-                alert("Successfully subscribed to newsletter!")
-            } else {
-                alert("Failed to subscribe. Please try again.")
-            }
-        } catch (error) {
-            alert("Failed to subscribe. Please try again.")
         }
     }
 
@@ -443,30 +422,6 @@ export default function BlogPost({}) {
                                     </div>
                                 )}
 
-                                {/* Newsletter Subscription */}
-                                <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
-                                    <h3 className="text-lg font-semibold text-white mb-4">Subscribe to Newsletter</h3>
-                                    <p className="text-sm text-gray-300 mb-4">
-                                        Get the latest insights and guides delivered right to your inbox.
-                                    </p>
-                                    <form onSubmit={handleSubscribe}>
-                                        <input
-                                            type="email"
-                                            value={subscriberEmail}
-                                            onChange={(e) => setSubscriberEmail(e.target.value)}
-                                            placeholder="Enter your email"
-                                            className="w-full px-4 py-3 bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-amber-400/30 transition-all duration-300"
-                                            required
-                                        />
-                                        <button
-                                            type="submit"
-                                            className="w-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-black py-3 px-4 rounded-xl text-sm font-medium transition-all duration-300 backdrop-blur-sm relative overflow-hidden group"
-                                        >
-                                            <span className="relative z-10">Subscribe</span>
-                                            <span className="absolute inset-0 bg-gradient-to-r from-amber-300 to-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                                        </button>
-                                    </form>
-                                </div>
                             </aside>
                         </div>
                     </div>

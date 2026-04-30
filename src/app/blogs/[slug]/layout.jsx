@@ -1,14 +1,13 @@
 import { generateBlogSEO } from "@/lib/seo"
-import { getSupabaseServiceClient } from "@/lib/supabase"
+import { getBlogBySlug } from "@/lib/blogs"
 
 import "@/styles/blogs.css"
 
 export async function generateMetadata({ params }) {
     const { slug } = params
     try {
-        const supabase = getSupabaseServiceClient()
-        const { data: blog, error } = await supabase.from("Blog").select("*").eq("slug", slug).single()
-        if (error || !blog) {
+        const blog = getBlogBySlug(slug)
+        if (!blog) {
             throw new Error("Blog post not found")
         }
         const { title, description, tags = [], created_at, updated_at, thumbnail } = blog

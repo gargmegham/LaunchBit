@@ -5,11 +5,10 @@ import Link from "next/link"
 
 import { useEffect, useState } from "react"
 
-import { fetchWithNoCache } from "@/lib/api"
-
 export default function BlogListing() {
     const [blogs, setBlogs] = useState([])
     const [loading, setLoading] = useState(true)
+    const [tagsLoading, setTagsLoading] = useState(true)
     const [search, setSearch] = useState("")
     const [selectedTag, setSelectedTag] = useState("")
     const [tags, setTags] = useState([])
@@ -51,7 +50,7 @@ export default function BlogListing() {
                 ...(selectedTag && { tag: selectedTag }),
             })
 
-            const response = await fetchWithNoCache(`/api/blogs?${params}`)
+            const response = await fetch(`/api/blogs?${params}`)
             if (response.ok) {
                 const data = await response.json()
                 setBlogs(data.blogs)
@@ -66,19 +65,21 @@ export default function BlogListing() {
 
     const fetchTags = async () => {
         try {
-            const response = await fetchWithNoCache("/api/blogs/tags")
+            const response = await fetch("/api/blogs/tags")
             if (response.ok) {
                 const data = await response.json()
                 setTags(data)
             }
         } catch (error) {
             console.error("Failed to fetch tags:", error)
+        } finally {
+            setTagsLoading(false)
         }
     }
 
     const fetchRecentPosts = async () => {
         try {
-            const response = await fetchWithNoCache("/api/blogs?limit=5")
+            const response = await fetch("/api/blogs?limit=5")
             if (response.ok) {
                 const data = await response.json()
                 setRecentPosts(data.blogs)
@@ -90,7 +91,7 @@ export default function BlogListing() {
 
     const fetchFeaturedPosts = async () => {
         try {
-            const response = await fetchWithNoCache("/api/blogs?featured=true&limit=5")
+            const response = await fetch("/api/blogs?featured=true&limit=5")
             if (response.ok) {
                 const data = await response.json()
                 setFeaturedPosts(data.blogs)
@@ -152,19 +153,27 @@ export default function BlogListing() {
                             <div className="mb-8">
                                 <h3 className="text-lg font-semibold text-white mb-4">Service Categories</h3>
                                 <div className="flex flex-wrap gap-3">
-                                    {tags.map(({ tag, count }) => (
-                                        <button
-                                            key={tag}
-                                            onClick={() => handleTagFilter(tag)}
-                                            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
-                                                selectedTag === tag
-                                                    ? "bg-gradient-to-r from-amber-400 to-amber-500 text-black shadow-lg"
-                                                    : "bg-white/10 text-gray-300 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-amber-500/20 hover:text-amber-400 hover:border-amber-400/30 backdrop-blur-sm border border-white/10"
-                                            }`}
-                                        >
-                                            {tag} <span className="text-xs opacity-70">({count})</span>
-                                        </button>
-                                    ))}
+                                    {tagsLoading
+                                        ? [1, 2, 3, 4, 5].map((index) => (
+                                              <div
+                                                  key={index}
+                                                  className="h-8 rounded-full bg-white/10 border border-white/10 animate-pulse"
+                                                  style={{ width: `${72 + index * 12}px` }}
+                                              />
+                                          ))
+                                        : tags.map(({ tag, count }) => (
+                                              <button
+                                                  key={tag}
+                                                  onClick={() => handleTagFilter(tag)}
+                                                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
+                                                      selectedTag === tag
+                                                          ? "bg-gradient-to-r from-amber-400 to-amber-500 text-black shadow-lg"
+                                                          : "bg-white/10 text-gray-300 hover:bg-gradient-to-r hover:from-amber-400/20 hover:to-amber-500/20 hover:text-amber-400 hover:border-amber-400/30 backdrop-blur-sm border border-white/10"
+                                                  }`}
+                                              >
+                                                  {tag} <span className="text-xs opacity-70">({count})</span>
+                                              </button>
+                                          ))}
                                 </div>
                             </div>
 
@@ -339,7 +348,6 @@ export default function BlogListing() {
                                     </div>
                                 </div>
                             )}
-
                         </aside>
                     </div>
                 </main>

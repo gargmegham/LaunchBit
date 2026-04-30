@@ -6,7 +6,6 @@ import { useParams, useRouter } from "next/navigation"
 
 import { useEffect, useState } from "react"
 
-import { fetchWithNoCache } from "@/lib/api"
 import { FaCopy, FaFacebook, FaLinkedin, FaReddit, FaTwitter, FaWhatsapp } from "react-icons/fa"
 
 import CustomMarkdown from "@/components/CustomMarkdown"
@@ -35,7 +34,7 @@ export default function BlogPost({}) {
     const fetchBlog = async () => {
         setLoading(true)
         try {
-            const response = await fetchWithNoCache(`/api/blogs/${params.slug}`)
+            const response = await fetch(`/api/blogs/${params.slug}`)
             if (response.ok) {
                 const data = await response.json()
                 setBlog(data)
@@ -52,7 +51,7 @@ export default function BlogPost({}) {
 
     const fetchRecentPosts = async () => {
         try {
-            const response = await fetchWithNoCache("/api/blogs?limit=5")
+            const response = await fetch("/api/blogs?limit=5")
             if (response.ok) {
                 const data = await response.json()
                 setRecentPosts(data.blogs)
@@ -66,7 +65,7 @@ export default function BlogPost({}) {
         if (!blog?.tags?.length) return
 
         try {
-            const response = await fetchWithNoCache(`/api/blogs?tag=${blog.tags[0]}&limit=5`)
+            const response = await fetch(`/api/blogs?tag=${blog.tags[0]}&limit=5`)
             if (response.ok) {
                 const data = await response.json()
                 // Filter out current post
@@ -421,7 +420,6 @@ export default function BlogPost({}) {
                                         </div>
                                     </div>
                                 )}
-
                             </aside>
                         </div>
                     </div>

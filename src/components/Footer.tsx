@@ -164,7 +164,7 @@ export const Footer = () => {
                 {/* Bottom Section */}
                 <div className="mt-16 pt-8 border-t border-white/10">
                     <div className="flex flex-col md:flex-row justify-between items-center">
-                        <p className="text-white/60 text-sm">© 2025, LaunchBit Inc.</p>
+                        <p className="text-white/60 text-sm">© 2026, LaunchBit</p>
                         <div className="flex items-center mt-4 md:mt-0">
                             <span className="text-white/60 text-sm mr-2">Founder:</span>
                             <Link
